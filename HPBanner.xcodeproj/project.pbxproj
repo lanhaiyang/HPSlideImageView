@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6512185D1EACF10F0013EE85 /* HPSlideLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6512185C1EACF10F0013EE85 /* HPSlideLayout.m */; };
+		659312091EC83679004E8F04 /* UIView+HPRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 659312081EC83679004E8F04 /* UIView+HPRect.m */; };
 		65F7B2FC1EAB3D2500A99D6C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F7B2FB1EAB3D2500A99D6C /* main.m */; };
 		65F7B2FF1EAB3D2500A99D6C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F7B2FE1EAB3D2500A99D6C /* AppDelegate.m */; };
 		65F7B3021EAB3D2500A99D6C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F7B3011EAB3D2500A99D6C /* ViewController.m */; };
@@ -15,6 +17,11 @@
 		65F7B30A1EAB3D2500A99D6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65F7B3081EAB3D2500A99D6C /* LaunchScreen.storyboard */; };
 		65F7B3151EAB3D2500A99D6C /* HPBannerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F7B3141EAB3D2500A99D6C /* HPBannerTests.m */; };
 		65F7B3201EAB3D2500A99D6C /* HPBannerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F7B31F1EAB3D2500A99D6C /* HPBannerUITests.m */; };
+		65F7B3341EAB3D4B00A99D6C /* DyamicTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F7B32F1EAB3D4B00A99D6C /* DyamicTime.m */; };
+		65F7B3351EAB3D4B00A99D6C /* HPSlideImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F7B3311EAB3D4B00A99D6C /* HPSlideImageView.m */; };
+		65F7B3361EAB3D4B00A99D6C /* HPSlideLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F7B3331EAB3D4B00A99D6C /* HPSlideLogic.m */; };
+		65F7B33F1EAB46C800A99D6C /* HPGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F7B33E1EAB46C800A99D6C /* HPGesture.m */; };
+		7046551EAD4610E113925986 /* libPods-HPBanner.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D04E6068D1AB5FE2BADC5F4 /* libPods-HPBanner.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +42,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D18F4044EFFACD7EE4FF8E4 /* Pods-HPBanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HPBanner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HPBanner/Pods-HPBanner.debug.xcconfig"; sourceTree = "<group>"; };
+		6512185B1EACF10F0013EE85 /* HPSlideLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPSlideLayout.h; sourceTree = "<group>"; };
+		6512185C1EACF10F0013EE85 /* HPSlideLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPSlideLayout.m; sourceTree = "<group>"; };
+		659312071EC83679004E8F04 /* UIView+HPRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HPRect.h"; sourceTree = "<group>"; };
+		659312081EC83679004E8F04 /* UIView+HPRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HPRect.m"; sourceTree = "<group>"; };
+		6593120A1EC83E21004E8F04 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		65F7B2F71EAB3D2500A99D6C /* HPBanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HPBanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65F7B2FB1EAB3D2500A99D6C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		65F7B2FD1EAB3D2500A99D6C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +64,16 @@
 		65F7B31B1EAB3D2500A99D6C /* HPBannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HPBannerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		65F7B31F1EAB3D2500A99D6C /* HPBannerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HPBannerUITests.m; sourceTree = "<group>"; };
 		65F7B3211EAB3D2500A99D6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65F7B32E1EAB3D4B00A99D6C /* DyamicTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DyamicTime.h; sourceTree = "<group>"; };
+		65F7B32F1EAB3D4B00A99D6C /* DyamicTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DyamicTime.m; sourceTree = "<group>"; };
+		65F7B3301EAB3D4B00A99D6C /* HPSlideImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPSlideImageView.h; sourceTree = "<group>"; };
+		65F7B3311EAB3D4B00A99D6C /* HPSlideImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPSlideImageView.m; sourceTree = "<group>"; };
+		65F7B3321EAB3D4B00A99D6C /* HPSlideLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPSlideLogic.h; sourceTree = "<group>"; };
+		65F7B3331EAB3D4B00A99D6C /* HPSlideLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPSlideLogic.m; sourceTree = "<group>"; };
+		65F7B33D1EAB46C800A99D6C /* HPGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPGesture.h; sourceTree = "<group>"; };
+		65F7B33E1EAB46C800A99D6C /* HPGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPGesture.m; sourceTree = "<group>"; };
+		8D04E6068D1AB5FE2BADC5F4 /* libPods-HPBanner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HPBanner.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1592BC2A7377F7775C6C103 /* Pods-HPBanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HPBanner.release.xcconfig"; path = "Pods/Target Support Files/Pods-HPBanner/Pods-HPBanner.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7046551EAD4610E113925986 /* libPods-HPBanner.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +109,8 @@
 				65F7B3131EAB3D2500A99D6C /* HPBannerTests */,
 				65F7B31E1EAB3D2500A99D6C /* HPBannerUITests */,
 				65F7B2F81EAB3D2500A99D6C /* Products */,
+				80283474E2C86CB362FE940D /* Pods */,
+				8A51484CED4270D20EEFDCCA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +127,7 @@
 		65F7B2F91EAB3D2500A99D6C /* HPBanner */ = {
 			isa = PBXGroup;
 			children = (
+				65F7B32D1EAB3D4B00A99D6C /* Banner */,
 				65F7B2FD1EAB3D2500A99D6C /* AppDelegate.h */,
 				65F7B2FE1EAB3D2500A99D6C /* AppDelegate.m */,
 				65F7B3001EAB3D2500A99D6C /* ViewController.h */,
@@ -118,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				65F7B2FB1EAB3D2500A99D6C /* main.m */,
+				6593120A1EC83E21004E8F04 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -140,6 +168,42 @@
 			path = HPBannerUITests;
 			sourceTree = "<group>";
 		};
+		65F7B32D1EAB3D4B00A99D6C /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				659312071EC83679004E8F04 /* UIView+HPRect.h */,
+				659312081EC83679004E8F04 /* UIView+HPRect.m */,
+				65F7B33D1EAB46C800A99D6C /* HPGesture.h */,
+				65F7B33E1EAB46C800A99D6C /* HPGesture.m */,
+				65F7B32E1EAB3D4B00A99D6C /* DyamicTime.h */,
+				65F7B32F1EAB3D4B00A99D6C /* DyamicTime.m */,
+				6512185B1EACF10F0013EE85 /* HPSlideLayout.h */,
+				6512185C1EACF10F0013EE85 /* HPSlideLayout.m */,
+				65F7B3321EAB3D4B00A99D6C /* HPSlideLogic.h */,
+				65F7B3331EAB3D4B00A99D6C /* HPSlideLogic.m */,
+				65F7B3301EAB3D4B00A99D6C /* HPSlideImageView.h */,
+				65F7B3311EAB3D4B00A99D6C /* HPSlideImageView.m */,
+			);
+			path = Banner;
+			sourceTree = "<group>";
+		};
+		80283474E2C86CB362FE940D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0D18F4044EFFACD7EE4FF8E4 /* Pods-HPBanner.debug.xcconfig */,
+				D1592BC2A7377F7775C6C103 /* Pods-HPBanner.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8A51484CED4270D20EEFDCCA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8D04E6068D1AB5FE2BADC5F4 /* libPods-HPBanner.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +211,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 65F7B3241EAB3D2500A99D6C /* Build configuration list for PBXNativeTarget "HPBanner" */;
 			buildPhases = (
+				0C6917F40982A21AF4C8E5C8 /* [CP] Check Pods Manifest.lock */,
 				65F7B2F31EAB3D2500A99D6C /* Sources */,
 				65F7B2F41EAB3D2500A99D6C /* Frameworks */,
 				65F7B2F51EAB3D2500A99D6C /* Resources */,
+				7FABE182F111BD5DC52FBC7C /* [CP] Embed Pods Frameworks */,
+				AAEED1B098FCF0A06185DFE7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -268,13 +335,67 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0C6917F40982A21AF4C8E5C8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7FABE182F111BD5DC52FBC7C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HPBanner/Pods-HPBanner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AAEED1B098FCF0A06185DFE7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HPBanner/Pods-HPBanner-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		65F7B2F31EAB3D2500A99D6C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65F7B33F1EAB46C800A99D6C /* HPGesture.m in Sources */,
+				65F7B3351EAB3D4B00A99D6C /* HPSlideImageView.m in Sources */,
 				65F7B3021EAB3D2500A99D6C /* ViewController.m in Sources */,
+				6512185D1EACF10F0013EE85 /* HPSlideLayout.m in Sources */,
+				65F7B3361EAB3D4B00A99D6C /* HPSlideLogic.m in Sources */,
+				65F7B3341EAB3D4B00A99D6C /* DyamicTime.m in Sources */,
 				65F7B2FF1EAB3D2500A99D6C /* AppDelegate.m in Sources */,
+				659312091EC83679004E8F04 /* UIView+HPRect.m in Sources */,
 				65F7B2FC1EAB3D2500A99D6C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,8 +543,10 @@
 		};
 		65F7B3251EAB3D2500A99D6C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D18F4044EFFACD7EE4FF8E4 /* Pods-HPBanner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(TARGET_NAME)/PrefixHeader.pch";
 				INFOPLIST_FILE = HPBanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hepeng.HPBanner;
@@ -433,8 +556,10 @@
 		};
 		65F7B3261EAB3D2500A99D6C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1592BC2A7377F7775C6C103 /* Pods-HPBanner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(TARGET_NAME)/PrefixHeader.pch";
 				INFOPLIST_FILE = HPBanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hepeng.HPBanner;
@@ -507,6 +632,7 @@
 				65F7B3261EAB3D2500A99D6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		65F7B3271EAB3D2500A99D6C /* Build configuration list for PBXNativeTarget "HPBannerTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +641,7 @@
 				65F7B3291EAB3D2500A99D6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		65F7B32A1EAB3D2500A99D6C /* Build configuration list for PBXNativeTarget "HPBannerUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +650,7 @@
 				65F7B32C1EAB3D2500A99D6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

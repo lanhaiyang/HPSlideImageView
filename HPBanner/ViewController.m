@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "HPSlideImageView.h"
 
 @interface ViewController ()
 
@@ -16,7 +17,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    HPSlideImageView *slideImageView=[HPSlideImageView new];
+    
+    [slideImageView hp_weakObj:self
+               setSlideImage:^HPSetObj *(id weakObj, HPSetObj *hpSetObj) {
+                   
+                   hpSetObj.animation=YES;
+                   hpSetObj.style=ENUM_HP_RightPageControl;
+//                   hpSetObj.arrayImage//数据源 
+                   
+                   return hpSetObj;
+                   
+               } action:^(id weakObj, NSUInteger index) {
+                   NSLog(@"点击");
+               } indexPath:^HPContent *(id weakObj, HPContent *content, NSUInteger index) {
+                   
+                   content.name=@"你好";
+                   return content;
+                   
+               }];
+    
+    [slideImageView updateLayout];
+    
 }
 
 
