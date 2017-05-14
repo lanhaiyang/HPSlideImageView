@@ -2,10 +2,8 @@
 ## 轮播图
 
 ### 1.创建HPSlideImageView
-
 ```
-    HPSlideImageView *slideImageView=[HPSlideImageView new];
-    
+ HPSlideImageView *slideImageView=[HPSlideImageView new];    
 ```
 ### 2.设置轮播图
 ```
