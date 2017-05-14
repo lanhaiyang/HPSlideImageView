@@ -19,7 +19,7 @@ hpSetObj.animation是否开启动画
 hpSetObj.style设置样式
 hpSetObj.arrayImage数据源 UIImage 或  NSString
 
-HPContent:设置改变是状态
+HPContent:设置改变的状态
 ```
 
 ```
