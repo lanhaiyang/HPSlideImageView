@@ -7,7 +7,7 @@
     HPSlideImageView *slideImageView=[HPSlideImageView new];
     
 ```
-### 2.设置轮播图###
+### 2.设置轮播图
 ```
 HPSetObj:设置轮播图样式
 
