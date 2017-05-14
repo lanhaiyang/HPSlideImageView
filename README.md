@@ -3,7 +3,13 @@
 
 ### 1.创建HPSlideImageView
 ```
- HPSlideImageView *slideImageView=[HPSlideImageView new];    
+ PSlideImageView *slideImageView=[[HPSlideImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 200)];
+ 
+ 如果使用Storyboard
+ 让UIView继承 HPSlideImageView
+ 
+ @property(nonatomic,weak) HPSlideImageView *slideImageView;
+ 
 ```
 ### 2.设置轮播图
 ```

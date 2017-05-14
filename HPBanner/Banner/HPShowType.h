@@ -17,4 +17,7 @@ typedef NS_ENUM(NSInteger, HPSlideImageViewType) {
     ENUM_HP_RightContentANDRightPageControl=1<<4
 };
 
+//判断是否为空
+#define ObjNil(__object,__notNil) __object!=nil?__object:__notNil
+
 #endif /* HPShowType_h */

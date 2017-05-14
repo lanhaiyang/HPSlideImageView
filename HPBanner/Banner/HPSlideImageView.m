@@ -154,7 +154,7 @@
               slideSuperView:self.width
                   scrollView:scrollView
                 currentIndex:&currentIndex
-                   dataArray:_hpObj.arrayImage
+                   dataArray:_hpObj.arrayImage.count
                 changeNumber:^(HPSlideImageView *weakObj, NSInteger leftCurrenNumber, NSInteger currenNumber, NSInteger rightCurrenNumber) {
                     
                     NSArray *arrayData=weakObj.hpObj.arrayImage;
