@@ -3,7 +3,7 @@
 
 ### 1.创建HPSlideImageView
 ```
- PSlideImageView *slideImageView=[[HPSlideImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 200)];
+ HPSlideImageView *slideImageView=[[HPSlideImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 200)];
  
  如果使用Storyboard
  让UIView继承 HPSlideImageView
