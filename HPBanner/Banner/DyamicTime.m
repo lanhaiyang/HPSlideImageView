@@ -16,6 +16,10 @@
 
 @property(nonatomic,strong) id hpWeakObj;
 
+@property(nonatomic,assign) BOOL boolPause;
+
+@property(nonatomic,assign) NSTimeInterval timeInterval;
+
 @end
 
 @implementation DyamicTime
@@ -27,6 +31,7 @@
 
 -(void)hpWeakObj:(id)weakObj openAnimationInterval:(NSTimeInterval )intervalTime block:(ChangeTime)time
 {
+    _hpWeakObj=weakObj;
     [self creatTimeInterval:intervalTime block:time];
 }
 
@@ -44,6 +49,7 @@
                    block:(ChangeTime)time
 {
     _changeTime=time;
+    _timeInterval=interval;
     _timer_ChangeContext=[NSTimer scheduledTimerWithTimeInterval:interval target:self selector:@selector(changeTimer:) userInfo:nil repeats:YES];
     [[NSRunLoop mainRunLoop] addTimer:_timer_ChangeContext forMode:NSRunLoopCommonModes];
     
@@ -70,12 +76,24 @@
 
 -(void)pauseAnimtion
 {
+    _boolPause=YES;
     [self.timer_ChangeContext setFireDate:[NSDate distantFuture]];
 }
 
 -(void)continueAnimtion
 {
-    [self.timer_ChangeContext setFireDate:[NSDate date]];
+    if (_boolPause==YES) {
+        _boolPause=NO;
+    }
+    else
+    {
+        return;
+    }
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(_timeInterval * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.timer_ChangeContext setFireDate:[NSDate date]];
+    });
+    
 }
 
 

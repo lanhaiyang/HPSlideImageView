@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6512185D1EACF10F0013EE85 /* HPSlideLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6512185C1EACF10F0013EE85 /* HPSlideLayout.m */; };
 		659312091EC83679004E8F04 /* UIView+HPRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 659312081EC83679004E8F04 /* UIView+HPRect.m */; };
+		659312141EC88219004E8F04 /* UIView+HPGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 659312131EC88219004E8F04 /* UIView+HPGesture.m */; };
 		65F7B2FC1EAB3D2500A99D6C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F7B2FB1EAB3D2500A99D6C /* main.m */; };
 		65F7B2FF1EAB3D2500A99D6C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F7B2FE1EAB3D2500A99D6C /* AppDelegate.m */; };
 		65F7B3021EAB3D2500A99D6C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F7B3011EAB3D2500A99D6C /* ViewController.m */; };
@@ -20,7 +21,6 @@
 		65F7B3341EAB3D4B00A99D6C /* DyamicTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F7B32F1EAB3D4B00A99D6C /* DyamicTime.m */; };
 		65F7B3351EAB3D4B00A99D6C /* HPSlideImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F7B3311EAB3D4B00A99D6C /* HPSlideImageView.m */; };
 		65F7B3361EAB3D4B00A99D6C /* HPSlideLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F7B3331EAB3D4B00A99D6C /* HPSlideLogic.m */; };
-		65F7B33F1EAB46C800A99D6C /* HPGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F7B33E1EAB46C800A99D6C /* HPGesture.m */; };
 		7046551EAD4610E113925986 /* libPods-HPBanner.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D04E6068D1AB5FE2BADC5F4 /* libPods-HPBanner.a */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +49,8 @@
 		659312081EC83679004E8F04 /* UIView+HPRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HPRect.m"; sourceTree = "<group>"; };
 		6593120A1EC83E21004E8F04 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		6593120B1EC853C3004E8F04 /* HPShowType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPShowType.h; sourceTree = "<group>"; };
+		659312121EC88219004E8F04 /* UIView+HPGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HPGesture.h"; sourceTree = "<group>"; };
+		659312131EC88219004E8F04 /* UIView+HPGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HPGesture.m"; sourceTree = "<group>"; };
 		65F7B2F71EAB3D2500A99D6C /* HPBanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HPBanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65F7B2FB1EAB3D2500A99D6C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		65F7B2FD1EAB3D2500A99D6C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -71,8 +73,6 @@
 		65F7B3311EAB3D4B00A99D6C /* HPSlideImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPSlideImageView.m; sourceTree = "<group>"; };
 		65F7B3321EAB3D4B00A99D6C /* HPSlideLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPSlideLogic.h; sourceTree = "<group>"; };
 		65F7B3331EAB3D4B00A99D6C /* HPSlideLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPSlideLogic.m; sourceTree = "<group>"; };
-		65F7B33D1EAB46C800A99D6C /* HPGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPGesture.h; sourceTree = "<group>"; };
-		65F7B33E1EAB46C800A99D6C /* HPGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPGesture.m; sourceTree = "<group>"; };
 		8D04E6068D1AB5FE2BADC5F4 /* libPods-HPBanner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HPBanner.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1592BC2A7377F7775C6C103 /* Pods-HPBanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HPBanner.release.xcconfig"; path = "Pods/Target Support Files/Pods-HPBanner/Pods-HPBanner.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -175,8 +175,8 @@
 				6593120B1EC853C3004E8F04 /* HPShowType.h */,
 				659312071EC83679004E8F04 /* UIView+HPRect.h */,
 				659312081EC83679004E8F04 /* UIView+HPRect.m */,
-				65F7B33D1EAB46C800A99D6C /* HPGesture.h */,
-				65F7B33E1EAB46C800A99D6C /* HPGesture.m */,
+				659312121EC88219004E8F04 /* UIView+HPGesture.h */,
+				659312131EC88219004E8F04 /* UIView+HPGesture.m */,
 				65F7B32E1EAB3D4B00A99D6C /* DyamicTime.h */,
 				65F7B32F1EAB3D4B00A99D6C /* DyamicTime.m */,
 				6512185B1EACF10F0013EE85 /* HPSlideLayout.h */,
@@ -390,7 +390,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65F7B33F1EAB46C800A99D6C /* HPGesture.m in Sources */,
 				65F7B3351EAB3D4B00A99D6C /* HPSlideImageView.m in Sources */,
 				65F7B3021EAB3D2500A99D6C /* ViewController.m in Sources */,
 				6512185D1EACF10F0013EE85 /* HPSlideLayout.m in Sources */,
@@ -398,6 +397,7 @@
 				65F7B3341EAB3D4B00A99D6C /* DyamicTime.m in Sources */,
 				65F7B2FF1EAB3D2500A99D6C /* AppDelegate.m in Sources */,
 				659312091EC83679004E8F04 /* UIView+HPRect.m in Sources */,
+				659312141EC88219004E8F04 /* UIView+HPGesture.m in Sources */,
 				65F7B2FC1EAB3D2500A99D6C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

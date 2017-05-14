@@ -34,7 +34,7 @@
     [slideImageView hp_weakObj:self
                setSlideImage:^HPSetObj *(id weakObj, HPSetObj *hpSetObj) {
                    
-                   hpSetObj.animation=YES;
+                   hpSetObj.animation=NO;
                    hpSetObj.bottomColor=[UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
                    hpSetObj.style=ENUM_HP_LeftContentANDRightPageControl;
                    hpSetObj.arrayImage=arrayDataString;//数据源
@@ -52,7 +52,10 @@
     
     //[slideImageView updateLayout];
     
+
+    
 }
+
 
 
 - (void)didReceiveMemoryWarning {

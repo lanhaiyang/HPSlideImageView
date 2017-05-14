@@ -8,7 +8,7 @@
 
 #import "HPSlideImageView.h"
 #import "HPSlideLogic.h"
-#import "HPGesture.h"
+#import "UIView+HPGesture.h"
 #import "HPSlideLayout.h"
 #import "UIView+HPRect.h"
 #import "DyamicTime.h"
@@ -78,16 +78,15 @@
 
 -(void)weakObj:(id)weakObj mageViewAction:(ACTIONIMAGEVIEW)actionBlock
 {
-    HPGesture *gesture=[HPGesture new];
-    [gesture weakObj:self
-          addTapView:_centerImageView
-          tapgesture:^(HPSlideImageView *weak, UITapGestureRecognizer *tap) {
-              
-              if (actionBlock!=nil) {
-                  actionBlock(weakObj,currentIndex);
-              }
-              
-          }];
+
+
+    [_centerImageView weakObj:self tapgesture:^(id weak, UITapGestureRecognizer *tap) {
+        
+        if (actionBlock!=nil) {
+            actionBlock(weakObj,currentIndex);
+        }
+        
+    }];
 }
 
 -(void)updateLayout
@@ -97,6 +96,7 @@
 
 -(void)weakObj:(id)weakObj layout:(SET_SlideImage)setBlock
 {
+    _hpObj.animation=YES;
     if (setBlock!=nil) {
         _hpObj=setBlock(weakObj,self.hpObj);
     }
@@ -150,6 +150,7 @@
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
+    
     [HPSlideLogic hp_weakObj:self
               slideSuperView:self.width
                   scrollView:scrollView
@@ -170,6 +171,12 @@
                     [HPSlideLayout imageViewSetImage:weakObj.rightImageView setObj:[HPSlideLogic arrayData:arrayData currenInde:rightCurrenNumber]];
                     
                 }];
+    [_time continueAnimtion];
+}
+
+-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    [_time pauseAnimtion];
 }
 
 +(void)chileWeakObj:(id)weakObj labelContent:(UILabel *)contentLabel changeWithContentBlock:(CHANGE_IndexPath )indexPathBlock currenNumber:(NSUInteger)currenNumber
@@ -285,10 +292,6 @@
     return _pageColor;
 }
 
--(BOOL)animation
-{
-    return YES;
-}
 
 
 @end

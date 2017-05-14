@@ -41,7 +41,6 @@
     scrollView.frame=CGRectMake(0, 0, slideImageView.width, slideImageView.height);
     scrollView.contentOffset=CGPointMake(slideImageView.width, 0);
     
-    background.frame=CGRectMake(0, 0, scrollView.contentSize.width, scrollView.height);
     [scrollView addSubview:background];
     [slideImageView addSubview:scrollView];
     
@@ -70,6 +69,7 @@
 {
     scrollView.contentSize=CGSizeMake(slideImageView.width, slideImageView.height);
     scrollView.contentOffset=CGPointMake(0, 0);
+    backgroundView.frame=CGRectMake(0, 0, scrollView.contentSize.width, scrollView.height);
     
     if (leftImageView!=nil) {
         leftImageView.userInteractionEnabled=YES;
@@ -87,7 +87,7 @@
 {
     scrollView.contentSize=CGSizeMake(SizeNumber*slideImageView.width, slideImageView.height);
     scrollView.contentOffset=CGPointMake(slideImageView.width, 0);
-    
+    backgroundView.frame=CGRectMake(0, 0, scrollView.contentSize.width, scrollView.height);
     if (leftImageView!=nil) {
         leftImageView.frame=CGRectMake(0, 0, slideImageView.width, scrollView.height);
         [backgroundView addSubview:leftImageView];
