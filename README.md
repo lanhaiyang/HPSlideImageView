@@ -25,7 +25,7 @@ HPContent:设置改变的状态
 ```
 
     [slideImageView hp_weakObj:self
-               setSlideImage:^HPSetObj *(id weakObj, HPSetObj *hpSetObj) {
+                 setSlideImage:^HPSetObj *(id weakObj, HPSetObj *hpSetObj) {
                    
                    /*
                    		设置轮播图样式
