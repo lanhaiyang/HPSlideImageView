@@ -56,6 +56,10 @@ static void *hpWeakObj=&hpWeakObj;
 
 -(void)weakObj:(id)weakObj tapgesture:(TAP_ACTION)tapClick
 {
+    if (self.userInteractionEnabled==NO) {
+        return;
+    }
+    
     self.tapClick=[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionTap:)];
     self.tapAction=tapClick;
     self.hpWeakObj=weakObj;
@@ -65,7 +69,6 @@ static void *hpWeakObj=&hpWeakObj;
 -(void)actionTap:(UITapGestureRecognizer *)tap
 {
     if (self.tapAction!=nil) {
-        NSLog(@"By gesture catch");
         self.tapAction(self.hpWeakObj,tap);
     }
     else

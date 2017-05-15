@@ -48,7 +48,9 @@
         [self layoutArrayCountOneSlideSuperView:slideImageView
                                      scrollView:scrollView
                                  backgroundView:background
-                                           left:leftImageView];
+                                           left:leftImageView
+                                         center:centerImageView
+                                          right:rightImageView];
     }
     else if(dataArray.count>1)
     {
@@ -66,6 +68,8 @@
                               scrollView:(UIScrollView *)scrollView
                           backgroundView:(UIView *)backgroundView
                                     left:(UIImageView *)leftImageView
+                                  center:(UIImageView *)centerImageView
+                                   right:(UIImageView *)rightImageView
 {
     scrollView.contentSize=CGSizeMake(slideImageView.width, slideImageView.height);
     scrollView.contentOffset=CGPointMake(0, 0);
@@ -76,6 +80,9 @@
         leftImageView.frame=CGRectMake(0, 0, slideImageView.width, scrollView.height);
         [backgroundView addSubview:leftImageView];
     }
+    
+    centerImageView=nil;
+    rightImageView=nil;
 }
 
 +(void)layoutArrayCountGreaterThanOneSlideSuperView:(HPSlideImageView *)slideImageView
@@ -89,6 +96,7 @@
     scrollView.contentOffset=CGPointMake(slideImageView.width, 0);
     backgroundView.frame=CGRectMake(0, 0, scrollView.contentSize.width, scrollView.height);
     if (leftImageView!=nil) {
+        leftImageView.userInteractionEnabled=NO;
         leftImageView.frame=CGRectMake(0, 0, slideImageView.width, scrollView.height);
         [backgroundView addSubview:leftImageView];
     }
@@ -100,6 +108,7 @@
     }
     
     if (rightImageView!=nil) {
+        rightImageView.userInteractionEnabled=NO;
         rightImageView.frame=CGRectMake(2*slideImageView.width, 0, scrollView.width, scrollView.height);
         [backgroundView addSubview:rightImageView];
     }

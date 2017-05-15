@@ -42,7 +42,7 @@
                    return hpSetObj;
                    
                } action:^(id weakObj, NSUInteger index) {
-                   NSLog(@"点击");
+                   NSLog(@"点击%ld",index);
                } indexPath:^HPContent *(id weakObj, HPContent *content, NSUInteger index) {
                    
                    content.name=arrayDataName[index];

@@ -79,7 +79,14 @@
 -(void)weakObj:(id)weakObj mageViewAction:(ACTIONIMAGEVIEW)actionBlock
 {
 
-
+    [_leftImageView weakObj:self tapgesture:^(id weak, UITapGestureRecognizer *tap) {
+        
+        if (actionBlock!=nil) {
+            actionBlock(weakObj,currentIndex);
+        }
+        
+    }];
+    
     [_centerImageView weakObj:self tapgesture:^(id weak, UITapGestureRecognizer *tap) {
         
         if (actionBlock!=nil) {
