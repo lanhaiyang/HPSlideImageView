@@ -19,6 +19,7 @@ pod install
  
 ```
 ### 2.设置轮播图
+
 ```
 HPSetObj:设置轮播图样式
 
@@ -55,10 +56,13 @@ HPContent:设置改变的状态
                    */
                    return content;
                    
-               }];
+               }];   
+                           
     
 ```
 ### 请求到数据更新轮播图
+
 ```
 [slideImageView updateLayout];
+
 ```
