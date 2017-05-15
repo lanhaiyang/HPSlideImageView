@@ -64,5 +64,4 @@ HPContent:设置改变的状态
 
 ```
 [slideImageView updateLayout];
-
 ```
