@@ -1,6 +1,6 @@
 # HPSlideImageView
 ## 轮播图
-### pod 
+### 下载该项目需要 pod 
 
 ```
 打开终端
