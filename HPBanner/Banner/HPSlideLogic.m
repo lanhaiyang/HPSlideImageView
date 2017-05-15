@@ -57,6 +57,9 @@
  */
 +(id )arrayData:(NSArray *)arrayData currenInde:(NSInteger)index
 {
+    if (arrayData.count==0) {
+        return nil;
+    }
     index=[self arrayDataWithPoint:arrayData.count currenInde:index];
     
     return arrayData[index];
