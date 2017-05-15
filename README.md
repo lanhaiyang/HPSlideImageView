@@ -1,5 +1,12 @@
 # HPSlideImageView
 ## 轮播图
+### pod 
+
+```
+打开终端
+cd 项目的目录
+pod install
+```
 
 ### 1.创建HPSlideImageView
 ```
