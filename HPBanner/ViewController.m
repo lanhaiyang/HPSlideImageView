@@ -32,23 +32,23 @@
     NSArray *arrayDataName=@[@"夏威夷",@"威尼斯",@"秋天风景",@"碧蓝湖"];
     
     [slideImageView hp_weakObj:self
-               setSlideImage:^HPSetObj *(id weakObj, HPSetObj *hpSetObj) {
-                   
-                   hpSetObj.animation=NO;
-                   hpSetObj.bottomColor=[UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
-                   hpSetObj.style=ENUM_HP_LeftContentANDRightPageControl;
-                   hpSetObj.arrayImage=arrayDataString;//数据源
-                   
-                   return hpSetObj;
-                   
-               } action:^(id weakObj, NSUInteger index) {
-                   NSLog(@"点击%ld",index);
-               } indexPath:^HPContent *(id weakObj, HPContent *content, NSUInteger index) {
-                   
-                   content.name=arrayDataName[index];
-                   return content;
-                   
-               }];
+                 setSlideImage:^HPSetObj *(id weakObj, HPSetObj *hpSetObj) {
+                     
+                     hpSetObj.animation=NO;
+                     hpSetObj.bottomColor=[UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
+                     hpSetObj.style=ENUM_HP_LeftContentANDRightPageControl;
+                     hpSetObj.arrayImage=arrayDataString;//数据源
+                     
+                     return hpSetObj;
+                     
+                 } action:^(id weakObj, NSUInteger index) {
+                     NSLog(@"点击%ld",index);
+                 } indexPath:^HPContent *(id weakObj, HPContent *content, NSUInteger index) {
+                     
+                     content.name=arrayDataName[index];
+                     return content;
+                     
+                 }];
     
     //[slideImageView updateLayout];
     

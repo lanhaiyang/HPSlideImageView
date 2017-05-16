@@ -129,14 +129,18 @@
     [HPSlideLayout imageViewSetImage:self.rightImageView
                               setObj:[HPSlideLogic arrayData:_hpObj.arrayImage
                                                   currenInde:1]];
-    [self time:_hpObj.animation];
+    [self time:_hpObj];
 }
 
--(void)time:(BOOL)animation{
+-(void)time:(HPSetObj *)hpSetObj{
+    
+    if (hpSetObj.arrayImage.count==1) {
+        return;
+    }
     
     [_time stop];
     
-    if (animation==YES) {
+    if (hpSetObj.animation==YES) {
         
         _time=[DyamicTime createTime];
         
