@@ -135,7 +135,7 @@
 -(void)time:(HPSetObj *)hpSetObj{
     
     if (hpSetObj.arrayImage.count==1) {
-        return;
+        return ;
     }
     
     [_time stop];
