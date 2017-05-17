@@ -190,12 +190,6 @@
     [_time pauseAnimtion];
 }
 
-
--(void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    
-}
-
 +(void)chileWeakObj:(id)weakObj labelContent:(UILabel *)contentLabel changeWithContentBlock:(CHANGE_IndexPath )indexPathBlock currenNumber:(NSUInteger)currenNumber
 {
     if (indexPathBlock!=nil) {
