@@ -23,19 +23,23 @@ pod install
 ```
 HPSetObj:设置轮播图样式
 
-hpSetObj.animation是否开启动画
-hpSetObj.style设置样式
-hpSetObj.arrayImage数据源 UIImage 或  NSString
+hpSetObj.animation  是否开启动画
+hpSetObj.style      设置样式
+hpSetObj.arrayImage 数据源 UIImage 或  NSString
+hpSetObj.bottomColor底部bottom view 颜色
+hpSetObj.pageColor  修改 select 的颜色
 
 /**
  修改bottom的位置
 
- @param addView 添加到那个view
- @param bottomRect 相对于addview的位置
+ @param addView     添加到那个view
+ @param bottomRect  相对于addview的位置
  */
 -(void)bottomAddSubview:(UIView *)addView bottomRect:(CGRect)bottomRect;
 
 HPContent:设置改变的状态
+
+content.name        修改bottom view上面的label名字
 ```
 
 ```
@@ -59,7 +63,7 @@ HPContent:设置改变的状态
                    NSString *name=weakObj.array[index];
                    content.name=name;
                    /*
-                   		设置当前改变UIiamge的name
+                   		设置当前改变UIIamge的name
                    
                    */
                    return content;
