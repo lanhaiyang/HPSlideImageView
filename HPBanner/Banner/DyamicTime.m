@@ -90,9 +90,7 @@
         return;
     }
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(_timeInterval * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.timer_ChangeContext setFireDate:[NSDate date]];
-    });
+    [_timer_ChangeContext setFireDate:[NSDate dateWithTimeIntervalSinceNow:_timeInterval]];
     
 }
 

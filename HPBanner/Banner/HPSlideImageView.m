@@ -190,6 +190,12 @@
     [_time pauseAnimtion];
 }
 
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    
+}
+
 +(void)chileWeakObj:(id)weakObj labelContent:(UILabel *)contentLabel changeWithContentBlock:(CHANGE_IndexPath )indexPathBlock currenNumber:(NSUInteger)currenNumber
 {
     if (indexPathBlock!=nil) {
@@ -209,6 +215,7 @@
 {
     if (_bannerScrollView==nil) {
         _bannerScrollView=[[UIScrollView alloc] init];
+        _bannerScrollView.bounces=NO;
         _bannerScrollView.showsHorizontalScrollIndicator=NO;
         _bannerScrollView.pagingEnabled=YES;
         _bannerScrollView.delegate=self;
