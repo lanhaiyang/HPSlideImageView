@@ -171,7 +171,7 @@
 
 }
 
-+(void)rightPageLayout:(UIView *)bottmView
++(UIPageControl *)rightPageLayout:(UIView *)bottmView
               pageView:(UIPageControl *)pageView
 {
     if (pageView!=nil) {
@@ -180,9 +180,11 @@
         pageView.frame=CGRectMake(x, y, 100, 20);
         [bottmView addSubview:pageView];
     }
+    
+    return pageView;
 }
 
-+(void)centerPageLayout:(UIView *)bottmView
++(UIPageControl *)centerPageLayout:(UIView *)bottmView
                pageView:(UIPageControl *)pageView
 {
     if (pageView!=nil) {
@@ -191,9 +193,11 @@
         pageView.frame=CGRectMake(x, y, 100, 20);
         [bottmView addSubview:pageView];
     }
+    
+    return pageView;
 }
 
-+(void)leftPageLayout:(UIView *)bottmView
++(UIPageControl *)leftPageLayout:(UIView *)bottmView
              pageView:(UIPageControl *)pageView
 {
     if (pageView!=nil) {
@@ -202,23 +206,21 @@
         pageView.frame=CGRectMake(x, y, 100, 20);
         [bottmView addSubview:pageView];
     }
+    
+    return pageView;
 }
 
 +(void)leftContentANDRightPageLayout:(UIView *)bottmView
                             pageView:(UIPageControl *)pageView
                         contentLabel:(UILabel *)contentLabel
 {
-    if (pageView!=nil) {
-        CGFloat x=bottmView.width-(100+5);
-        CGFloat y=bottmView.height/2-20/2;
-        pageView.frame=CGRectMake(x, y, 100, 20);
-        [bottmView addSubview:pageView];
-    }
+    pageView=[self rightPageLayout:bottmView pageView:pageView];
     
     if (contentLabel!=nil) {
+        CGFloat x=20;
         CGFloat y=bottmView.height/2-labelHeight/2;
-        CGFloat width=bottmView.width-pageView.width-10;
-        contentLabel.frame=CGRectMake(20, y, width, 30);
+        CGFloat width=bottmView.width-pageView.width-10-x-5;
+        contentLabel.frame=CGRectMake(x, y, width, 30);
         contentLabel.font=[UIFont systemFontOfSize:14];
         contentLabel.textAlignment=NSTextAlignmentLeft;
         [bottmView addSubview:contentLabel];
@@ -230,16 +232,20 @@
                          contentLabel:(UILabel *)contentLabel
 {
     
+    pageView=[self leftPageLayout:bottmView pageView:pageView];
+    
     if (contentLabel!=nil) {
         CGFloat y=bottmView.height/2-labelHeight/2;
-        CGFloat x=pageView.width+pageView.x;
-        CGFloat width=bottmView.width-pageView.width-10;
+        CGFloat x=pageView.width+pageView.x+5;
+        CGFloat width=bottmView.width-pageView.width-pageView.x-20;
         contentLabel.frame=CGRectMake(x, y, width, 30);
         contentLabel.font=[UIFont systemFontOfSize:14];
-        contentLabel.textAlignment=NSTextAlignmentLeft;
+        contentLabel.textAlignment=NSTextAlignmentRight;
         [bottmView addSubview:contentLabel];
     }
 }
+
+
 
 +(void)imageViewSetImage:(UIImageView *)imageView setObj:(id)Obj
 {
