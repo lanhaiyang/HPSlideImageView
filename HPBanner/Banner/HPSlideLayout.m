@@ -261,4 +261,10 @@
     }
 }
 
++(void)upView:(UIView *)upView addSubview:(UIView *)bottomView layoutRect:(CGRect)rect
+{
+    bottomView.frame=rect;
+    [upView addSubview:bottomView];
+}
+
 @end

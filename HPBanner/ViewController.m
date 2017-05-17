@@ -32,7 +32,7 @@
     NSArray *arrayDataName=@[@"夏威夷",@"威尼斯",@"秋天风景",@"碧蓝湖"];
     
     [slideImageView hp_weakObj:self
-                 setSlideImage:^HPSetObj *(id weakObj, HPSetObj *hpSetObj) {
+                 setSlideImage:^HPSetObj *(ViewController *weakObj, HPSetObj *hpSetObj) {
                      
                      hpSetObj.animation=YES;
                      hpSetObj.bottomColor=[UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];

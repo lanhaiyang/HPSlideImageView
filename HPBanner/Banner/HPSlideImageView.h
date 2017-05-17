@@ -72,6 +72,15 @@ typedef void (^ACTIONIMAGEVIEW)(id weakObj,NSUInteger index);
  */
 @property(nonatomic,strong) UIColor *pageColor;
 
+
+/**
+ 修改bottom的位置
+
+ @param addView 添加到那个view
+ @param bottomRect 相对于addview的位置
+ */
+-(void)bottomAddSubview:(UIView *)addView bottomRect:(CGRect)bottomRect;
+
 @end
 
 

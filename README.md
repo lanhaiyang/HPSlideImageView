@@ -27,6 +27,14 @@ hpSetObj.animation是否开启动画
 hpSetObj.style设置样式
 hpSetObj.arrayImage数据源 UIImage 或  NSString
 
+/**
+ 修改bottom的位置
+
+ @param addView 添加到那个view
+ @param bottomRect 相对于addview的位置
+ */
+-(void)bottomAddSubview:(UIView *)addView bottomRect:(CGRect)bottomRect;
+
 HPContent:设置改变的状态
 ```
 

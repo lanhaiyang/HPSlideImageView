@@ -35,6 +35,13 @@
 
 @end
 
+@interface HPSetObj ()
+
+@property(nonatomic,weak) UIView *subview;
+@property(nonatomic,assign) CGRect bottomRect;
+
+@end
+
 @implementation HPSlideImageView
 {
     NSUInteger currentIndex;
@@ -73,6 +80,12 @@
                        bottomView:self.bottomView
                          pageView:self.page
                      contentLabel:self.contentLabel];
+    
+    //update Bottom
+    
+    if (hpSetObj.subview!=nil) {
+        [HPSlideLayout upView:hpSetObj.subview addSubview:self.bottomView layoutRect:hpSetObj.bottomRect];
+    }
     
 }
 
@@ -304,6 +317,11 @@
     return _pageColor;
 }
 
+-(void)bottomAddSubview:(UIView *)addView bottomRect:(CGRect)bottomRect
+{
+    self.subview=addView;
+    self.bottomRect=bottomRect;
+}
 
 
 @end

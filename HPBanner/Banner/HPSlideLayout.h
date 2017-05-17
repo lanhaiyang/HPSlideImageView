@@ -58,4 +58,6 @@
  */
 +(void)imageViewSetImage:(UIImageView *)imageView setObj:(id)Obj;
 
++(void)upView:(UIView *)upView addSubview:(UIView *)bottomView layoutRect:(CGRect)rect;
+
 @end
