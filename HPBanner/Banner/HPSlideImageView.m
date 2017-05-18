@@ -147,7 +147,7 @@
 
 -(void)time:(HPSetObj *)hpSetObj{
     
-    if (hpSetObj.arrayImage.count==1) {
+    if (hpSetObj.arrayImage.count<=1) {
         return ;
     }
     
@@ -202,6 +202,7 @@
 {
     [_time pauseAnimtion];
 }
+
 
 +(void)chileWeakObj:(id)weakObj labelContent:(UILabel *)contentLabel changeWithContentBlock:(CHANGE_IndexPath )indexPathBlock currenNumber:(NSUInteger)currenNumber
 {
