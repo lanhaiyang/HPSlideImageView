@@ -21,7 +21,7 @@ HPSlideImageView *slideImageView=[[HPSlideImageView alloc] initWithFrame:CGRectM
 
 ### 2.设置轮播图
 
-####HPSetObj:设置轮播图样式
+#### HPSetObj:设置轮播图样式
 
 - hpSetObj.animation    是否开启动画
 - hpSetObj.style        设置样式
@@ -50,11 +50,11 @@ HPSlideImageView *slideImageView=[[HPSlideImageView alloc] initWithFrame:CGRectM
 @property(nonatomic,assign) CGFloat visionDifference;        
 ```
 
-###visionDifference 视觉差效果
+### visionDifference 视觉差效果
 
 ![image](https://github.com/lanhaiyang/HPSlideImageView/blob/master/README/visionAnimation.gif)
 
-####HPContent:设置改变的状态
+#### HPContent:设置改变的状态
 
 - content.name        修改bottom view上面的label名字 
 
