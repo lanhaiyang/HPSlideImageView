@@ -24,12 +24,12 @@ HPSlideImageView *slideImageView=[[HPSlideImageView alloc] initWithFrame:CGRectM
 ```objective-c
 HPSetObj:设置轮播图样式
 
-*hpSetObj.animation    是否开启动画
-*hpSetObj.style        设置样式
-*hpSetObj.arrayImage   数据源 UIImage 或  NSString
-*hpSetObj.bottomColor  底部bottom view 颜色
-*hpSetObj.pageColor    修改 select 的颜色
-*hpSetObj.defaultImage 设置下载时的默认图片
+	- hpSetObj.animation    是否开启动画
+	- hpSetObj.style        设置样式
+	- hpSetObj.arrayImage   数据源 UIImage 或  NSString
+	- hpSetObj.bottomColor  底部bottom view 颜色
+	- hpSetObj.pageColor    修改 select 的颜色
+	- hpSetObj.defaultImage 设置下载时的默认图片
 
 /**
 修改bottom的位置
@@ -51,7 +51,7 @@ HPSetObj:设置轮播图样式
 
 HPContent:设置改变的状态
 
-*content.name        修改bottom view上面的label名字
+	- content.name        修改bottom view上面的label名字
 ```
 
 ### HPSetObj: visionDifference 视觉差效果
