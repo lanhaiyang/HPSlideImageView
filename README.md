@@ -9,18 +9,19 @@ pod install
 ```
 
 ### 1.创建HPSlideImageView
-<pre><code class="objectivec">
- HPSlideImageView *slideImageView=[[HPSlideImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 200)];
+
+```objective-c
+HPSlideImageView *slideImageView=[[HPSlideImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 200)];
  
  如果使用Storyboard
  让UIView继承 HPSlideImageView
  
  @property(nonatomic,weak) HPSlideImageView *slideImageView;
-</code></pre>
+```
 
 ### 2.设置轮播图
 
-```
+```objective-c
 HPSetObj:设置轮播图样式
 
 	hpSetObj.animation    是否开启动画
@@ -61,7 +62,7 @@ HPContent:设置改变的状态
 ### 初始化HPSlideImageView
 
 
-```
+```objective-c
 
     [slideImageView hp_weakObj:self
                  setSlideImage:^HPSetObj *(id weakObj, HPSetObj *hpSetObj) {
@@ -93,6 +94,6 @@ HPContent:设置改变的状态
 ```
 ### 请求到数据更新轮播图
 
-```
+```objective-c
 [slideImageView updateLayout];
 ```
