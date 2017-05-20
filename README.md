@@ -9,15 +9,15 @@ pod install
 ```
 
 ### 1.创建HPSlideImageView
-```
+<pre><code class="objectivec">
  HPSlideImageView *slideImageView=[[HPSlideImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 200)];
  
  如果使用Storyboard
  让UIView继承 HPSlideImageView
  
  @property(nonatomic,weak) HPSlideImageView *slideImageView;
- 
-```
+</code></pre>
+
 ### 2.设置轮播图
 
 ```
