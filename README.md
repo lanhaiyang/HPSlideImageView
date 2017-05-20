@@ -37,7 +37,7 @@ HPSlideImageView *slideImageView=[[HPSlideImageView alloc] initWithFrame:CGRectM
 @param addView     添加到那个view
 @param bottomRect  相对于addview的位置
 */
--(void)bottomAddSubview:(UIView *)addView bottomRect:	(CGRect)bottomRect;
+-(void)bottomAddSubview:(UIView *)addView bottomRect:(CGRect)bottomRect;
 	
 /**
 视觉差异
