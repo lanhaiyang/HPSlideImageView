@@ -7,7 +7,7 @@
 //
 
 #import "HPSlideLogic.h"
-
+#import "UIView+HPRect.h"
 
 
 @implementation HPSlideLogic
@@ -18,7 +18,7 @@
        scrollView:(UIScrollView *)scrollView
      currentIndex:(NSUInteger *)currentIndex
         dataArray:(NSUInteger )arrayDataCount
-     changeNumber:(CHANGE_CURRENT)changeBlock
+     endNumber:(END_CURRENT)endBlock
 {
     CGPoint off=[scrollView contentOffset];
     
@@ -28,8 +28,8 @@
         NSUInteger currenNumber=*currentIndex+1;
         currenNumber=[self arrayDataWithPoint:arrayDataCount currenInde:currenNumber];
         *currentIndex=currenNumber;
-        if (changeBlock!=nil) {
-            changeBlock(weakObj,currenNumber-1,currenNumber,currenNumber+1);
+        if (endBlock!=nil) {
+            endBlock(weakObj,currenNumber-1,currenNumber,currenNumber+1);
         }
         
     }
@@ -39,8 +39,8 @@
         NSUInteger currenNumber=*currentIndex-1;
          currenNumber=[self arrayDataWithPoint:arrayDataCount currenInde:currenNumber];
         *currentIndex=currenNumber;
-        if (changeBlock!=nil) {
-            changeBlock(weakObj,currenNumber-1,currenNumber,currenNumber+1);
+        if (endBlock!=nil) {
+            endBlock(weakObj,currenNumber-1,currenNumber,currenNumber+1);
         }
         
     }
@@ -49,6 +49,38 @@
     scrollView.contentOffset=CGPointMake(slideViewWidth, 0);
 }
 
++(void)hp_weakObj:(id)weakObj
+        beignMove:(CGFloat)scrollerBeignMove
+ visionDifference:(CGFloat)visionDifferenceNums
+       scrollView:(UIScrollView *)scrollView
+      changeBlock:(CHANGE_CURRENT)changeBlock;
+{
+    
+    if (changeBlock==nil) {
+        return;
+    }
+    
+    CGFloat movePoint=scrollView.contentOffset.x-scrollerBeignMove;
+    CGFloat percent=movePoint/scrollView.bounds.size.width;
+    CGFloat visionMove=scrollView.width*visionDifferenceNums;
+    CGFloat move=percent * visionMove;
+    
+    if (scrollView.contentOffset.x>scrollerBeignMove) {
+        
+        changeBlock(weakObj,ENUM_HP_Left,move,visionMove);
+        
+    }
+    else if(scrollView.contentOffset.x<scrollerBeignMove)
+    {
+        
+        changeBlock(weakObj,ENUM_HP_Right,move,visionMove);
+        
+    }
+    else
+    {
+        changeBlock(weakObj,ENUM_HP_Center,0,visionMove);
+    }
+}
 
 /**
     

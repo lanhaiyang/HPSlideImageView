@@ -11,7 +11,7 @@
 typedef void (^ChangeTime)(id weakObj);
 typedef void (^stopTime)(id weakObj);
 
-@interface DyamicTime : NSObject
+@interface HPDyamicTime : NSObject
 
 //创建时间对象
 +(instancetype)createTime;

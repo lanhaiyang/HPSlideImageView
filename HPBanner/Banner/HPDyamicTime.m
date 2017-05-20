@@ -6,9 +6,9 @@
 //  Copyright © 2017年 messcat. All rights reserved.
 //
 
-#import "DyamicTime.h"
+#import "HPDyamicTime.h"
 
-@interface DyamicTime ()
+@interface HPDyamicTime ()
 
 @property(nonatomic,strong)NSTimer *timer_ChangeContext;
 
@@ -22,11 +22,11 @@
 
 @end
 
-@implementation DyamicTime
+@implementation HPDyamicTime
 
 +(instancetype)createTime
 {
-    return [[DyamicTime alloc] init];
+    return [[HPDyamicTime alloc] init];
 }
 
 -(void)hpWeakObj:(id)weakObj openAnimationInterval:(NSTimeInterval )intervalTime block:(ChangeTime)time

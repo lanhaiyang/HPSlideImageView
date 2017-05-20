@@ -11,7 +11,7 @@
 #import "UIView+HPGesture.h"
 #import "HPSlideLayout.h"
 #import "UIView+HPRect.h"
-#import "DyamicTime.h"
+#import "HPDyamicTime.h"
 
 @interface HPSlideImageView ()<UIScrollViewDelegate>
 
@@ -31,7 +31,9 @@
 
 @property(nonatomic,strong) HPSetObj *hpObj;
 @property(nonatomic,strong) HPContent *hpContent;
-@property(nonatomic,strong) DyamicTime *time;
+@property(nonatomic,strong) HPDyamicTime *time;
+
+@property(nonatomic,assign) CGPoint beignMove;
 
 @end
 
@@ -65,12 +67,13 @@
            slideSuperView:(HPSlideImageView *)slideImageView
                 dataArray:(HPSetObj *)hpSetObj
 {
-    [HPSlideLayout slideSuperView:slideImageView
-                       scrollView:self.bannerScrollView
-                        dataArray:hpSetObj.arrayImage
-                             left:self.leftImageView
-                           center:self.centerImageView
-                            right:self.rightImageView];
+    [HPSlideLayout visionDifference:_hpObj.visionDifference
+                        slideSuperView:slideImageView
+                         scrollView:self.bannerScrollView
+                          dataArray:hpSetObj.arrayImage
+                               left:self.leftImageView
+                             center:self.centerImageView
+                              right:self.rightImageView];
     
     //add
 
@@ -134,14 +137,14 @@
                       currenNumber:0];
     
     [HPSlideLayout imageViewSetImage:self.leftImageView
-                              setObj:[HPSlideLogic arrayData:_hpObj.arrayImage
-                                                  currenInde:_hpObj.arrayImage.count-1]];
+                              setObj:[HPSlideLogic arrayData:_hpObj.arrayImage currenInde:_hpObj.arrayImage.count-1]
+                downloadDefaultImage:_hpObj.defaultImage];
     [HPSlideLayout imageViewSetImage:self.centerImageView
-                              setObj:[HPSlideLogic arrayData:_hpObj.arrayImage
-                                                  currenInde:0]];
+                              setObj:[HPSlideLogic arrayData:_hpObj.arrayImage currenInde:0]
+                downloadDefaultImage:_hpObj.defaultImage];
     [HPSlideLayout imageViewSetImage:self.rightImageView
-                              setObj:[HPSlideLogic arrayData:_hpObj.arrayImage
-                                                  currenInde:1]];
+                              setObj:[HPSlideLogic arrayData:_hpObj.arrayImage currenInde:1]
+                downloadDefaultImage:_hpObj.defaultImage];
     [self time:_hpObj];
 }
 
@@ -155,8 +158,7 @@
     
     if (hpSetObj.animation==YES) {
         
-        _time=[DyamicTime createTime];
-        
+        _time=[HPDyamicTime createTime];
         [_time hpWeakObj:self openAnimationInterval:5 block:^(HPSlideImageView *weakObj) {
             
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -180,7 +182,7 @@
                   scrollView:scrollView
                 currentIndex:&currentIndex
                    dataArray:_hpObj.arrayImage.count
-                changeNumber:^(HPSlideImageView *weakObj, NSInteger leftCurrenNumber, NSInteger currenNumber, NSInteger rightCurrenNumber) {
+                endNumber:^(HPSlideImageView *weakObj, NSInteger leftCurrenNumber, NSInteger currenNumber, NSInteger rightCurrenNumber) {
                     
                     NSArray *arrayData=weakObj.hpObj.arrayImage;
                     
@@ -190,17 +192,49 @@
                             changeWithContentBlock:weakObj.changeIndexBlock
                                       currenNumber:currenNumber];
                     
-                    [HPSlideLayout imageViewSetImage:weakObj.leftImageView setObj:[HPSlideLogic arrayData:arrayData currenInde:leftCurrenNumber]];
-                    [HPSlideLayout imageViewSetImage:weakObj.centerImageView setObj:[HPSlideLogic arrayData:arrayData currenInde:currenNumber]];
-                    [HPSlideLayout imageViewSetImage:weakObj.rightImageView setObj:[HPSlideLogic arrayData:arrayData currenInde:rightCurrenNumber]];
+                    [HPSlideLayout imageViewSetImage:weakObj.leftImageView
+                                              setObj:[HPSlideLogic arrayData:arrayData currenInde:leftCurrenNumber]
+                                downloadDefaultImage:weakObj.hpObj.defaultImage];
+                    
+                    [HPSlideLayout imageViewSetImage:weakObj.centerImageView
+                                              setObj:[HPSlideLogic arrayData:arrayData currenInde:currenNumber]
+                                downloadDefaultImage:weakObj.hpObj.defaultImage];
+                    
+                    [HPSlideLayout imageViewSetImage:weakObj.rightImageView
+                                              setObj:[HPSlideLogic arrayData:arrayData currenInde:rightCurrenNumber]
+                                downloadDefaultImage:weakObj.hpObj.defaultImage];
                     
                 }];
+    
+    
+    
     [_time continueAnimtion];
 }
 
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
     [_time pauseAnimtion];
+}
+
+
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    [HPSlideLogic hp_weakObj:self
+                   beignMove:_bannerScrollView.width
+            visionDifference:_hpObj.visionDifference
+                  scrollView:_bannerScrollView
+                 changeBlock:^(HPSlideImageView *weakObj, HPSlideType slideType, CGFloat visionMove, CGFloat visionDistance) {
+                     
+                     [HPSlideLayout slideWithVisionChangeType:slideType
+                                                   visionMove:visionMove
+                                                 moveDistance:visionDistance
+                                                   scrollView:weakObj.bannerScrollView
+                                                         Left:weakObj.leftImageView
+                                                       center:weakObj.centerImageView
+                                                        right:weakObj.rightImageView];
+                     
+                 }];
 }
 
 
@@ -227,6 +261,7 @@
         _bannerScrollView.showsHorizontalScrollIndicator=NO;
         _bannerScrollView.pagingEnabled=YES;
         _bannerScrollView.delegate=self;
+        _bannerScrollView.layer.masksToBounds=YES;
     }
     return _bannerScrollView;
 }
@@ -317,6 +352,19 @@
     }
     return _pageColor;
 }
+
+-(CGFloat)visionDifference
+{
+    if (_visionDifference>1) {
+        return 1.0;
+    }
+    else if(_visionDifference<0)
+    {
+        return 0;
+    }
+    return _visionDifference;
+}
+
 
 -(void)bottomAddSubview:(UIView *)addView bottomRect:(CGRect)bottomRect
 {

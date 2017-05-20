@@ -14,7 +14,6 @@
  */
 
 #import "HPSlideLayout.h"
-#import "HPSlideImageView.h"
 #import "UIView+HPRect.h"
 
 #define SizeNumber 3
@@ -26,7 +25,8 @@
 @implementation HPSlideLayout
 
 
-+(void)slideSuperView:(HPSlideImageView *)slideImageView
++(void)visionDifference:(CGFloat )visionDifferenceNum
+         slideSuperView:(UIView *)slideImageView
            scrollView:(UIScrollView *)scrollView
             dataArray:(NSArray *)dataArray
                  left:(UIImageView *)leftImageView
@@ -54,17 +54,19 @@
     }
     else if(dataArray.count>1)
     {
-        [self layoutArrayCountGreaterThanOneSlideSuperView:slideImageView
-                                                scrollView:scrollView
-                                            backgroundView:background
-                                                      left:leftImageView
-                                                    center:centerImageView
-                                                     right:rightImageView];
+
+        [self visionDifference:visionDifferenceNum
+                slideSuperView:slideImageView
+                    scrollView:scrollView
+                backgroundView:background
+                          left:leftImageView
+                        center:centerImageView
+                         right:rightImageView];
     }
     
 }
 
-+(void)layoutArrayCountOneSlideSuperView:(HPSlideImageView *)slideImageView
++(void)layoutArrayCountOneSlideSuperView:(UIView *)slideImageView
                               scrollView:(UIScrollView *)scrollView
                           backgroundView:(UIView *)backgroundView
                                     left:(UIImageView *)leftImageView
@@ -85,36 +87,52 @@
     rightImageView=nil;
 }
 
-+(void)layoutArrayCountGreaterThanOneSlideSuperView:(HPSlideImageView *)slideImageView
-                                         scrollView:(UIScrollView *)scrollView
-                                     backgroundView:(UIView *)backgroundView
-                                               left:(UIImageView *)leftImageView
-                                             center:(UIImageView *)centerImageView
-                                              right:(UIImageView *)rightImageView
++(void)visionDifference:(CGFloat )visionDifferenceNum
+         slideSuperView:(UIView *)slideImageView
+             scrollView:(UIScrollView *)scrollView
+         backgroundView:(UIView *)backgroundView
+                   left:(UIImageView *)leftImageView
+                 center:(UIImageView *)centerImageView
+                  right:(UIImageView *)rightImageView
 {
+    
+    CGFloat width=slideImageView.width*visionDifferenceNum;
+    
     scrollView.contentSize=CGSizeMake(SizeNumber*slideImageView.width, slideImageView.height);
     scrollView.contentOffset=CGPointMake(slideImageView.width, 0);
     backgroundView.frame=CGRectMake(0, 0, scrollView.contentSize.width, scrollView.height);
+    
+    UIView *centerView=[[UIView alloc] init];
+    
     if (leftImageView!=nil) {
         leftImageView.userInteractionEnabled=NO;
-        leftImageView.frame=CGRectMake(0, 0, slideImageView.width, scrollView.height);
+        leftImageView.frame=CGRectMake(width, 0, slideImageView.width, scrollView.height);
         [backgroundView addSubview:leftImageView];
     }
     
     if (centerImageView!=nil) {
+        
+        centerView.frame=CGRectMake(slideImageView.width, 0, scrollView.width, scrollView.height);
+        centerView.clipsToBounds=YES;
+        centerView.backgroundColor=[UIColor clearColor];
+        
         centerImageView.userInteractionEnabled=YES;
-        centerImageView.frame=CGRectMake(slideImageView.width, 0, scrollView.width, scrollView.height);
-        [backgroundView addSubview:centerImageView];
+        centerImageView.frame=CGRectMake(0, 0, scrollView.width, scrollView.height);
+        [centerView addSubview:centerImageView];
+        [backgroundView addSubview:centerView];
     }
     
     if (rightImageView!=nil) {
         rightImageView.userInteractionEnabled=NO;
-        rightImageView.frame=CGRectMake(2*slideImageView.width, 0, scrollView.width, scrollView.height);
+        rightImageView.frame=CGRectMake(2*slideImageView.width-width, 0, scrollView.width, scrollView.height);
         [backgroundView addSubview:rightImageView];
     }
+    
+    [backgroundView bringSubviewToFront:centerView];
 }
 
-+(void)slideSuperView:(HPSlideImageView *)slideImageView
+
++(void)slideSuperView:(UIView *)slideImageView
             styleType:(HPSlideImageViewType)style
             arrayData:(NSArray *)arrayData
            bottomView:(UIView *)bottmView
@@ -245,14 +263,53 @@
     }
 }
 
++(void)slideWithVisionChangeType:(HPSlideType)slideType
+                      visionMove:(CGFloat )visionMove
+                    moveDistance:(CGFloat)distance
+                      scrollView:(UIScrollView *)scrollView
+                            Left:(UIImageView *)leftImageView
+                          center:(UIImageView *)centerImageView
+                           right:(UIImageView *)rightImageView
+{
+    switch (slideType) {
+        case ENUM_HP_Left:
+        {
+            rightImageView.x=visionMove+(2*scrollView.width-distance);
+            centerImageView.x=visionMove;
+        }
+            break;
+        case ENUM_HP_Center:
+        {
+            rightImageView.x=2*scrollView.width-distance;
+            centerImageView.x=0;
+            leftImageView.x=distance;
+        }
+            break;
+        case ENUM_HP_Right:
+        {
+            leftImageView.x=visionMove+distance;
+            centerImageView.x=visionMove;
+        }
+            break;
+        default:
+            break;
+    }
+}
 
 
-+(void)imageViewSetImage:(UIImageView *)imageView setObj:(id)Obj
++(void)imageViewSetImage:(UIImageView *)imageView
+                  setObj:(id)Obj
+    downloadDefaultImage:(UIImage *)defaultImage
 {
     if ([Obj isKindOfClass:[NSString class]])
     {
         NSString *imageUrl=Obj;
-        [imageView sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:[UIImage imageNamed:@""]];
+        
+        if (defaultImage==nil) {
+            defaultImage=[UIImage imageNamed:@""];
+        }
+        
+        [imageView sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:defaultImage];
     }
     else if([Obj isKindOfClass:[UIImage class]])
     {

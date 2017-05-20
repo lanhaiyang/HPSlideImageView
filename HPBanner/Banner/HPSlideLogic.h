@@ -7,30 +7,46 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HPShowType.h"
 
-@class HPSlideImageView;
-
-typedef void(^CHANGE_CURRENT)(id weakObj,NSInteger leftCurrenNumber,NSInteger currenNumber,NSInteger rightCurrenNumber) ;
+typedef void(^END_CURRENT)(id weakObj,NSInteger leftCurrenNumber,NSInteger currenNumber,NSInteger rightCurrenNumber) ;
+typedef void(^CHANGE_CURRENT) (id weakObj,HPSlideType slideType,CGFloat visionMove,CGFloat visionDistance);
 
 @interface HPSlideLogic : UIView
 
 
 /**
- 设置滑动 逻辑
+ 设置滑动 结束时逻辑
 
  @param weakObj 需要在block弱引用的对象
  @param slideViewWidth Banner 底部的View宽度
  @param scrollView  滑动的scrollView
  @param currentIndex 当前imageView位置 需要一个指针
  @param arrayDataCount  图片的个数
- @param changeBlock 改变设置的block
+ @param endBlock 结束设置的block
  */
 +(void)hp_weakObj:(id)weakObj
    slideSuperView:(CGFloat)slideViewWidth
        scrollView:(UIScrollView *)scrollView
      currentIndex:(NSUInteger *)currentIndex
         dataArray:(NSUInteger )arrayDataCount
-     changeNumber:(CHANGE_CURRENT)changeBlock;
+     endNumber:(END_CURRENT)endBlock;
+
+
+/**
+ 改变时产生视觉差
+
+ @param weakObj 需要在block弱引用的对象
+ @param scrollerBeignMove 开始拖动的位置
+ @param visionDifferenceNums 视觉差的范围
+ @param scrollView 滑动的scrollView
+ @param changeBlock 改变修改位置的block
+ */
++(void)hp_weakObj:(id)weakObj
+        beignMove:(CGFloat)scrollerBeignMove
+ visionDifference:(CGFloat)visionDifferenceNums
+    scrollView:(UIScrollView *)scrollView
+       changeBlock:(CHANGE_CURRENT)changeBlock;
 
 
 /**

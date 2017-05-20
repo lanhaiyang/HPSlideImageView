@@ -74,6 +74,23 @@ typedef void (^ACTIONIMAGEVIEW)(id weakObj,NSUInteger index);
 
 
 /**
+ 视觉差异
+ 
+ 最小为0 为没有变化
+ 最大为1 视觉差最大化
+ 
+ 数值为  0~1
+ */
+@property(nonatomic,assign) CGFloat visionDifference;
+
+
+/**
+ 图片未下载完成用于做临时占位图片
+ */
+@property(nonatomic,strong) UIImage *defaultImage;
+
+
+/**
  修改bottom的位置
 
  @param addView 添加到那个view

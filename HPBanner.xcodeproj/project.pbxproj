@@ -18,7 +18,7 @@
 		65F7B30A1EAB3D2500A99D6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65F7B3081EAB3D2500A99D6C /* LaunchScreen.storyboard */; };
 		65F7B3151EAB3D2500A99D6C /* HPBannerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F7B3141EAB3D2500A99D6C /* HPBannerTests.m */; };
 		65F7B3201EAB3D2500A99D6C /* HPBannerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F7B31F1EAB3D2500A99D6C /* HPBannerUITests.m */; };
-		65F7B3341EAB3D4B00A99D6C /* DyamicTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F7B32F1EAB3D4B00A99D6C /* DyamicTime.m */; };
+		65F7B3341EAB3D4B00A99D6C /* HPDyamicTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F7B32F1EAB3D4B00A99D6C /* HPDyamicTime.m */; };
 		65F7B3351EAB3D4B00A99D6C /* HPSlideImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F7B3311EAB3D4B00A99D6C /* HPSlideImageView.m */; };
 		65F7B3361EAB3D4B00A99D6C /* HPSlideLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F7B3331EAB3D4B00A99D6C /* HPSlideLogic.m */; };
 		7046551EAD4610E113925986 /* libPods-HPBanner.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D04E6068D1AB5FE2BADC5F4 /* libPods-HPBanner.a */; };
@@ -67,8 +67,8 @@
 		65F7B31B1EAB3D2500A99D6C /* HPBannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HPBannerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		65F7B31F1EAB3D2500A99D6C /* HPBannerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HPBannerUITests.m; sourceTree = "<group>"; };
 		65F7B3211EAB3D2500A99D6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		65F7B32E1EAB3D4B00A99D6C /* DyamicTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DyamicTime.h; sourceTree = "<group>"; };
-		65F7B32F1EAB3D4B00A99D6C /* DyamicTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DyamicTime.m; sourceTree = "<group>"; };
+		65F7B32E1EAB3D4B00A99D6C /* HPDyamicTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPDyamicTime.h; sourceTree = "<group>"; };
+		65F7B32F1EAB3D4B00A99D6C /* HPDyamicTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPDyamicTime.m; sourceTree = "<group>"; };
 		65F7B3301EAB3D4B00A99D6C /* HPSlideImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPSlideImageView.h; sourceTree = "<group>"; };
 		65F7B3311EAB3D4B00A99D6C /* HPSlideImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPSlideImageView.m; sourceTree = "<group>"; };
 		65F7B3321EAB3D4B00A99D6C /* HPSlideLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPSlideLogic.h; sourceTree = "<group>"; };
@@ -177,8 +177,8 @@
 				659312081EC83679004E8F04 /* UIView+HPRect.m */,
 				659312121EC88219004E8F04 /* UIView+HPGesture.h */,
 				659312131EC88219004E8F04 /* UIView+HPGesture.m */,
-				65F7B32E1EAB3D4B00A99D6C /* DyamicTime.h */,
-				65F7B32F1EAB3D4B00A99D6C /* DyamicTime.m */,
+				65F7B32E1EAB3D4B00A99D6C /* HPDyamicTime.h */,
+				65F7B32F1EAB3D4B00A99D6C /* HPDyamicTime.m */,
 				6512185B1EACF10F0013EE85 /* HPSlideLayout.h */,
 				6512185C1EACF10F0013EE85 /* HPSlideLayout.m */,
 				65F7B3321EAB3D4B00A99D6C /* HPSlideLogic.h */,
@@ -395,7 +395,7 @@
 				65F7B3021EAB3D2500A99D6C /* ViewController.m in Sources */,
 				6512185D1EACF10F0013EE85 /* HPSlideLayout.m in Sources */,
 				65F7B3361EAB3D4B00A99D6C /* HPSlideLogic.m in Sources */,
-				65F7B3341EAB3D4B00A99D6C /* DyamicTime.m in Sources */,
+				65F7B3341EAB3D4B00A99D6C /* HPDyamicTime.m in Sources */,
 				65F7B2FF1EAB3D2500A99D6C /* AppDelegate.m in Sources */,
 				659312091EC83679004E8F04 /* UIView+HPRect.m in Sources */,
 				659312141EC88219004E8F04 /* UIView+HPGesture.m in Sources */,
