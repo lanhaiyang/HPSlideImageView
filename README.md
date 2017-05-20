@@ -55,7 +55,7 @@ HPContent:设置改变的状态
 
 ### HPSetObj: visionDifference 视觉差效果
 
-![image](https://github.com/lanhaiyang/HPSlideImageView/README/visionAnimation.gif) 
+![image](https://github.com/lanhaiyang/HPSlideImageView/blob/master/README/visionAnimation.gif) 
 
 
 ### 初始化HPSlideImageView
