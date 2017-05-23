@@ -23,7 +23,6 @@ HPSlideImageView *slideImageView=[[HPSlideImageView alloc] initWithFrame:CGRectM
 
 #### HPSetObj:设置轮播图样式
 
-- hpSetObj.animation    是否开启动画
 - hpSetObj.style        设置样式
 - hpSetObj.arrayImage   数据源 UIImage 或  NSString
 - hpSetObj.bottomColor  底部bottom view 颜色
@@ -31,6 +30,18 @@ HPSlideImageView *slideImageView=[[HPSlideImageView alloc] initWithFrame:CGRectM
 - hpSetObj.defaultImage 设置下载时的默认图片
 
 ```objective-c
+
+/**
+ 
+ 当小于0 为不开启
+ 当为0  默认运动时间为5s
+ 当大于0 为设置时间
+ 
+ 设置轮播时间
+ 
+ */
+@property(nonatomic,assign) NSTimeInterval animationTime;
+
 /**
 修改bottom的位置
 
