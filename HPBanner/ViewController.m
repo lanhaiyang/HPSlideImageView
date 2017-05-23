@@ -25,7 +25,7 @@
     HPSlideImageView *slideImageView=[[HPSlideImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 200)];
     [self.view addSubview:slideImageView];
     
-    NSArray *arrayDataString=@[@"http://scimg.jb51.net/allimg/150629/14-1506291A242927.jpg",
+    NSArray *arrayDataString=@[@"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=351109312,2084066331&fm=23&gp=0.gif",
                                @"http://pic.58pic.com/58pic/14/27/45/71r58PICmDM_1024.jpg",
                                @"http://scimg.jb51.net/allimg/160316/14-160316145129313.jpg",
                                @"http://img1.3lian.com/2015/w7/85/d/21.jpg"];

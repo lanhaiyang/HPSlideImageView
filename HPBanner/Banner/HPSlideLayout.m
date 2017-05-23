@@ -114,7 +114,7 @@
         
         centerView.frame=CGRectMake(slideImageView.width, 0, scrollView.width, scrollView.height);
         centerView.clipsToBounds=YES;
-        centerView.backgroundColor=[UIColor clearColor];
+        centerView.backgroundColor=[UIColor whiteColor];
         
         centerImageView.userInteractionEnabled=YES;
         centerImageView.frame=CGRectMake(0, 0, scrollView.width, scrollView.height);
@@ -296,27 +296,6 @@
     }
 }
 
-
-+(void)imageViewSetImage:(UIImageView *)imageView
-                  setObj:(id)Obj
-    downloadDefaultImage:(UIImage *)defaultImage
-{
-    if ([Obj isKindOfClass:[NSString class]])
-    {
-        NSString *imageUrl=Obj;
-        
-        if (defaultImage==nil) {
-            defaultImage=[UIImage imageNamed:@""];
-        }
-        
-        [imageView sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:defaultImage];
-    }
-    else if([Obj isKindOfClass:[UIImage class]])
-    {
-        UIImage *image=Obj;
-        imageView.image=image;
-    }
-}
 
 +(void)upView:(UIView *)upView addSubview:(UIView *)bottomView layoutRect:(CGRect)rect
 {

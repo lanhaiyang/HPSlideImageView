@@ -53,18 +53,6 @@
 
 
 /**
- 设置图片
-
- @param imageView 需要显示内容的imageView
- @param Obj UIImage 或 NString 
- @param defaultImage 设置默认图片
- */
-+(void)imageViewSetImage:(UIImageView *)imageView
-                  setObj:(id)Obj
-    downloadDefaultImage:(UIImage *)defaultImage;
-
-
-/**
  设置bottom的位置
 
  @param upView 在哪个view上面

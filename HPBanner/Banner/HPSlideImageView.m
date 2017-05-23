@@ -12,6 +12,7 @@
 #import "HPSlideLayout.h"
 #import "UIView+HPRect.h"
 #import "HPDyamicTime.h"
+#import "HPDownLoadImage.h"
 
 @interface HPSlideImageView ()<UIScrollViewDelegate>
 
@@ -136,15 +137,31 @@
             changeWithContentBlock:self.changeIndexBlock
                       currenNumber:0];
     
-    [HPSlideLayout imageViewSetImage:self.leftImageView
-                              setObj:[HPSlideLogic arrayData:_hpObj.arrayImage currenInde:_hpObj.arrayImage.count-1]
-                downloadDefaultImage:_hpObj.defaultImage];
-    [HPSlideLayout imageViewSetImage:self.centerImageView
-                              setObj:[HPSlideLogic arrayData:_hpObj.arrayImage currenInde:0]
-                downloadDefaultImage:_hpObj.defaultImage];
-    [HPSlideLayout imageViewSetImage:self.rightImageView
-                              setObj:[HPSlideLogic arrayData:_hpObj.arrayImage currenInde:1]
-                downloadDefaultImage:_hpObj.defaultImage];
+//    [HPSlideLayout imageViewSetImage:self.leftImageView
+//                              setObj:[HPSlideLogic arrayData:_hpObj.arrayImage currenInde:_hpObj.arrayImage.count-1]
+//                downloadDefaultImage:_hpObj.defaultImage];
+//    [HPSlideLayout imageViewSetImage:self.centerImageView
+//                              setObj:[HPSlideLogic arrayData:_hpObj.arrayImage currenInde:0]
+//                downloadDefaultImage:_hpObj.defaultImage];
+//    [HPSlideLayout imageViewSetImage:self.rightImageView
+//                              setObj:[HPSlideLogic arrayData:_hpObj.arrayImage currenInde:1]
+//                downloadDefaultImage:_hpObj.defaultImage];
+    
+    [HPDownLoadImage imageViewSetImage:self.leftImageView
+                                setObj:[HPSlideLogic arrayData:_hpObj.arrayImage currenInde:_hpObj.arrayImage.count-1]
+                       imageLoadStatus:HP_ENUM_LeadyLoadWeb
+                  downloadDefaultImage:self.hpObj.defaultImage];
+    
+    [HPDownLoadImage imageViewSetImage:self.centerImageView
+                                setObj:[HPSlideLogic arrayData:_hpObj.arrayImage currenInde:0]
+                       imageLoadStatus:HP_ENUM_LoadWeb
+                  downloadDefaultImage:self.hpObj.defaultImage];
+    
+    [HPDownLoadImage imageViewSetImage:self.rightImageView
+                                setObj:[HPSlideLogic arrayData:_hpObj.arrayImage currenInde:1]
+                       imageLoadStatus:HP_ENUM_LeadyLoadWeb
+                  downloadDefaultImage:self.hpObj.defaultImage];
+    
     [self time:_hpObj];
 }
 
@@ -192,17 +209,33 @@
                             changeWithContentBlock:weakObj.changeIndexBlock
                                       currenNumber:currenNumber];
                     
-                    [HPSlideLayout imageViewSetImage:weakObj.leftImageView
-                                              setObj:[HPSlideLogic arrayData:arrayData currenInde:leftCurrenNumber]
-                                downloadDefaultImage:weakObj.hpObj.defaultImage];
+//                    [HPSlideLayout imageViewSetImage:weakObj.leftImageView
+//                                              setObj:[HPSlideLogic arrayData:arrayData currenInde:leftCurrenNumber]
+//                                downloadDefaultImage:weakObj.hpObj.defaultImage];
                     
-                    [HPSlideLayout imageViewSetImage:weakObj.centerImageView
-                                              setObj:[HPSlideLogic arrayData:arrayData currenInde:currenNumber]
-                                downloadDefaultImage:weakObj.hpObj.defaultImage];
+//                    [HPSlideLayout imageViewSetImage:weakObj.centerImageView
+//                                              setObj:[HPSlideLogic arrayData:arrayData currenInde:currenNumber]
+//                                downloadDefaultImage:weakObj.hpObj.defaultImage];
+//                    
+//                    [HPSlideLayout imageViewSetImage:weakObj.rightImageView
+//                                              setObj:[HPSlideLogic arrayData:arrayData currenInde:rightCurrenNumber]
+//                                downloadDefaultImage:weakObj.hpObj.defaultImage];
                     
-                    [HPSlideLayout imageViewSetImage:weakObj.rightImageView
-                                              setObj:[HPSlideLogic arrayData:arrayData currenInde:rightCurrenNumber]
-                                downloadDefaultImage:weakObj.hpObj.defaultImage];
+                    [HPDownLoadImage imageViewSetImage:weakObj.leftImageView
+                                                setObj:[HPSlideLogic arrayData:arrayData currenInde:leftCurrenNumber]
+                                       imageLoadStatus:HP_ENUM_LeadyLoadWeb
+                                  downloadDefaultImage:weakObj.hpObj.defaultImage];
+                    
+                    [HPDownLoadImage imageViewSetImage:weakObj.centerImageView
+                                                setObj:[HPSlideLogic arrayData:arrayData currenInde:currenNumber]
+                                       imageLoadStatus:HP_ENUM_LoadWeb
+                                  downloadDefaultImage:weakObj.hpObj.defaultImage];
+                    
+                    [HPDownLoadImage imageViewSetImage:weakObj.rightImageView
+                                                setObj:[HPSlideLogic arrayData:arrayData currenInde:rightCurrenNumber]
+                                       imageLoadStatus:HP_ENUM_LeadyLoadWeb
+                                  downloadDefaultImage:weakObj.hpObj.defaultImage];
+                    
                     
                 }];
     

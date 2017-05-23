@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		6512185D1EACF10F0013EE85 /* HPSlideLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6512185C1EACF10F0013EE85 /* HPSlideLayout.m */; };
+		657581B61ED34E52006EA5D7 /* HPDownLoadImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 657581B51ED34E52006EA5D7 /* HPDownLoadImage.m */; };
 		659312091EC83679004E8F04 /* UIView+HPRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 659312081EC83679004E8F04 /* UIView+HPRect.m */; };
 		659312141EC88219004E8F04 /* UIView+HPGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 659312131EC88219004E8F04 /* UIView+HPGesture.m */; };
+		65CDEB4A1ED18104006AEA05 /* HPBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CDEB491ED18104006AEA05 /* HPBottomView.m */; };
 		65F7B2FC1EAB3D2500A99D6C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F7B2FB1EAB3D2500A99D6C /* main.m */; };
 		65F7B2FF1EAB3D2500A99D6C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F7B2FE1EAB3D2500A99D6C /* AppDelegate.m */; };
 		65F7B3021EAB3D2500A99D6C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F7B3011EAB3D2500A99D6C /* ViewController.m */; };
@@ -45,12 +47,16 @@
 		0D18F4044EFFACD7EE4FF8E4 /* Pods-HPBanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HPBanner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HPBanner/Pods-HPBanner.debug.xcconfig"; sourceTree = "<group>"; };
 		6512185B1EACF10F0013EE85 /* HPSlideLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPSlideLayout.h; sourceTree = "<group>"; };
 		6512185C1EACF10F0013EE85 /* HPSlideLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPSlideLayout.m; sourceTree = "<group>"; };
+		657581B41ED34E52006EA5D7 /* HPDownLoadImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPDownLoadImage.h; sourceTree = "<group>"; };
+		657581B51ED34E52006EA5D7 /* HPDownLoadImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPDownLoadImage.m; sourceTree = "<group>"; };
 		659312071EC83679004E8F04 /* UIView+HPRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HPRect.h"; sourceTree = "<group>"; };
 		659312081EC83679004E8F04 /* UIView+HPRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HPRect.m"; sourceTree = "<group>"; };
 		6593120A1EC83E21004E8F04 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		6593120B1EC853C3004E8F04 /* HPShowType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPShowType.h; sourceTree = "<group>"; };
 		659312121EC88219004E8F04 /* UIView+HPGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HPGesture.h"; sourceTree = "<group>"; };
 		659312131EC88219004E8F04 /* UIView+HPGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HPGesture.m"; sourceTree = "<group>"; };
+		65CDEB481ED18104006AEA05 /* HPBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HPBottomView.h; path = View/HPBottomView.h; sourceTree = "<group>"; };
+		65CDEB491ED18104006AEA05 /* HPBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HPBottomView.m; path = View/HPBottomView.m; sourceTree = "<group>"; };
 		65F7B2F71EAB3D2500A99D6C /* HPBanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HPBanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65F7B2FB1EAB3D2500A99D6C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		65F7B2FD1EAB3D2500A99D6C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -103,6 +109,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		65CDEB471ED180D5006AEA05 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				65CDEB481ED18104006AEA05 /* HPBottomView.h */,
+				65CDEB491ED18104006AEA05 /* HPBottomView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		65F7B2EE1EAB3D2500A99D6C = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +187,7 @@
 		65F7B32D1EAB3D4B00A99D6C /* Banner */ = {
 			isa = PBXGroup;
 			children = (
+				65CDEB471ED180D5006AEA05 /* View */,
 				6593120B1EC853C3004E8F04 /* HPShowType.h */,
 				659312071EC83679004E8F04 /* UIView+HPRect.h */,
 				659312081EC83679004E8F04 /* UIView+HPRect.m */,
@@ -185,6 +201,8 @@
 				65F7B3331EAB3D4B00A99D6C /* HPSlideLogic.m */,
 				65F7B3301EAB3D4B00A99D6C /* HPSlideImageView.h */,
 				65F7B3311EAB3D4B00A99D6C /* HPSlideImageView.m */,
+				657581B41ED34E52006EA5D7 /* HPDownLoadImage.h */,
+				657581B51ED34E52006EA5D7 /* HPDownLoadImage.m */,
 			);
 			path = Banner;
 			sourceTree = "<group>";
@@ -391,6 +409,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				657581B61ED34E52006EA5D7 /* HPDownLoadImage.m in Sources */,
 				65F7B3351EAB3D4B00A99D6C /* HPSlideImageView.m in Sources */,
 				65F7B3021EAB3D2500A99D6C /* ViewController.m in Sources */,
 				6512185D1EACF10F0013EE85 /* HPSlideLayout.m in Sources */,
@@ -400,6 +419,7 @@
 				659312091EC83679004E8F04 /* UIView+HPRect.m in Sources */,
 				659312141EC88219004E8F04 /* UIView+HPGesture.m in Sources */,
 				65F7B2FC1EAB3D2500A99D6C /* main.m in Sources */,
+				65CDEB4A1ED18104006AEA05 /* HPBottomView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
