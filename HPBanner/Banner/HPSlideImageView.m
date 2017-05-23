@@ -34,7 +34,6 @@
 @property(nonatomic,strong) HPContent *hpContent;
 @property(nonatomic,strong) HPDyamicTime *time;
 
-@property(nonatomic,assign) CGPoint beignMove;
 
 @end
 
@@ -42,6 +41,7 @@
 
 @property(nonatomic,weak) UIView *subview;
 @property(nonatomic,assign) CGRect bottomRect;
+@property(nonatomic,assign) BOOL animation;
 
 @end
 
@@ -137,15 +137,6 @@
             changeWithContentBlock:self.changeIndexBlock
                       currenNumber:0];
     
-//    [HPSlideLayout imageViewSetImage:self.leftImageView
-//                              setObj:[HPSlideLogic arrayData:_hpObj.arrayImage currenInde:_hpObj.arrayImage.count-1]
-//                downloadDefaultImage:_hpObj.defaultImage];
-//    [HPSlideLayout imageViewSetImage:self.centerImageView
-//                              setObj:[HPSlideLogic arrayData:_hpObj.arrayImage currenInde:0]
-//                downloadDefaultImage:_hpObj.defaultImage];
-//    [HPSlideLayout imageViewSetImage:self.rightImageView
-//                              setObj:[HPSlideLogic arrayData:_hpObj.arrayImage currenInde:1]
-//                downloadDefaultImage:_hpObj.defaultImage];
     
     [HPDownLoadImage imageViewSetImage:self.leftImageView
                                 setObj:[HPSlideLogic arrayData:_hpObj.arrayImage currenInde:_hpObj.arrayImage.count-1]
@@ -209,17 +200,6 @@
                             changeWithContentBlock:weakObj.changeIndexBlock
                                       currenNumber:currenNumber];
                     
-//                    [HPSlideLayout imageViewSetImage:weakObj.leftImageView
-//                                              setObj:[HPSlideLogic arrayData:arrayData currenInde:leftCurrenNumber]
-//                                downloadDefaultImage:weakObj.hpObj.defaultImage];
-                    
-//                    [HPSlideLayout imageViewSetImage:weakObj.centerImageView
-//                                              setObj:[HPSlideLogic arrayData:arrayData currenInde:currenNumber]
-//                                downloadDefaultImage:weakObj.hpObj.defaultImage];
-//                    
-//                    [HPSlideLayout imageViewSetImage:weakObj.rightImageView
-//                                              setObj:[HPSlideLogic arrayData:arrayData currenInde:rightCurrenNumber]
-//                                downloadDefaultImage:weakObj.hpObj.defaultImage];
                     
                     [HPDownLoadImage imageViewSetImage:weakObj.leftImageView
                                                 setObj:[HPSlideLogic arrayData:arrayData currenInde:leftCurrenNumber]
@@ -405,6 +385,22 @@
     self.bottomRect=bottomRect;
 }
 
+-(void)setAnimationTime:(NSTimeInterval)animationTime
+{
+    if (animationTime<0) {
+        _animation=NO;
+        animationTime=-1;
+        return;
+    }
+    else if(animationTime==0)
+    {
+        _animation=YES;
+        animationTime=5;
+        return;
+    }
+    _animationTime=animationTime;
+    _animation=YES;
+}
 
 @end
 

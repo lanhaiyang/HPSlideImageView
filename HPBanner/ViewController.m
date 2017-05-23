@@ -34,11 +34,11 @@
     [slideImageView hp_weakObj:self
                  setSlideImage:^HPSetObj *(ViewController *weakObj, HPSetObj *hpSetObj) {
                      
-                     hpSetObj.animation=NO;
+                     hpSetObj.animationTime=5;
                      hpSetObj.bottomColor=[UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
                      hpSetObj.style=ENUM_HP_RightContentANDRightPageControl;
                      hpSetObj.arrayImage=arrayDataString;//数据源
-                     hpSetObj.visionDifference=0.3;
+                     hpSetObj.visionDifference=0.99;
                      
                      return hpSetObj;
                      

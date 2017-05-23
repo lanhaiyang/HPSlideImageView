@@ -47,9 +47,15 @@ typedef void (^ACTIONIMAGEVIEW)(id weakObj,NSUInteger index);
 @interface HPSetObj : NSObject
 
 /**
- 是否需要动画
+ 
+ 当小于0 为不开启
+ 当为0  默认运动时间为5s
+ 当大于0 为设置时间
+ 
+ 设置轮播时间
+ 
  */
-@property(nonatomic,assign) BOOL animation;
+@property(nonatomic,assign) NSTimeInterval animationTime;
 
 /**
  样式
