@@ -23,6 +23,11 @@ typedef NS_ENUM(NSInteger,HPSlideType){
     ENUM_HP_Left=1<<2
 };
 
+typedef NS_ENUM(NSUInteger,IMAGESTATUS) {
+    HP_ENUM_LeadyLoadWeb=1<<0,
+    HP_ENUM_LoadWeb=1<<1
+};
+
 //判断是否为空
 #define ObjNil(__object,__notNil) __object!=nil?__object:__notNil
 

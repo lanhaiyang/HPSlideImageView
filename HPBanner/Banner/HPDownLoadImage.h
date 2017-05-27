@@ -7,11 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-typedef NS_ENUM(NSUInteger,IMAGESTATUS) {
-    HP_ENUM_LeadyLoadWeb=1<<0,
-    HP_ENUM_LoadWeb=1<<1
-};
+#import "HPShowType.h"
 
 @interface HPDownLoadImage : UIImage
 

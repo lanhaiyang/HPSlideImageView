@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "HPShowType.h"
 
+typedef void (^SlideUpdataBlock)(NSUInteger index,IMAGESTATUS ststus,UIImageView *currentImageView);
 
 @interface HPSlideLayout : UIView
 
@@ -20,6 +21,7 @@
  @param visionDifferenceNum 视觉差设置参数
  @param slideImageView Banner 底部的View宽度
  @param scrollView 滑动模块
+ @param background 滑块上面的布局
  @param dataArray 数据源
  @param leftImageView 左边的imageView
  @param centerImageView 中间的imageView
@@ -28,6 +30,7 @@
 +(void)visionDifference:(CGFloat )visionDifferenceNum
          slideSuperView:(UIView *)slideImageView
              scrollView:(UIScrollView *)scrollView
+  scrollVivewBackground:(UIView *)background
               dataArray:(NSArray *)dataArray
                    left:(UIImageView *)leftImageView
                  center:(UIImageView *)centerImageView
@@ -80,6 +83,34 @@
                             Left:(UIImageView *)leftImageView
                           center:(UIImageView *)centerImageView
                            right:(UIImageView *)rightImageView;
+
+
+/**
+ 更新布局
+
+ @param updateArray 数据源
+ @param visionDifferenceNum 视觉差
+ @param slideImageView HPSlideImageView对象
+ @param scrollView scrollView对象
+ @param bottomLabel bottom上面的对象
+ @param view  scrollView上面的背景
+ @param leftImageView 左边的imageView
+ @param centerImageView 中间的imageView
+ @param rightImageView 右边的imageView
+ @param slideUpdateBlock 主视图更新布局block
+ */
++(void)updateSlideWithArray:(NSArray *)updateArray
+           visionDifference:(CGFloat )visionDifferenceNum
+             slideSuperView:(UIView *)slideImageView
+                 scrollView:(UIScrollView *)scrollView
+                bottomLabel:(UILabel *)bottomLabel
+                 addSubView:(UIView *)view
+                       Left:(UIImageView *)leftImageView
+                     center:(UIImageView *)centerImageView
+                      right:(UIImageView *)rightImageView
+               updateLayout:(SlideUpdataBlock)slideUpdateBlock;
+
+
 
 
 @end

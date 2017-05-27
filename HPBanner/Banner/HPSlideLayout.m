@@ -28,15 +28,13 @@
 +(void)visionDifference:(CGFloat )visionDifferenceNum
          slideSuperView:(UIView *)slideImageView
            scrollView:(UIScrollView *)scrollView
+  scrollVivewBackground:(UIView *)background
             dataArray:(NSArray *)dataArray
                  left:(UIImageView *)leftImageView
                center:(UIImageView *)centerImageView
                 right:(UIImageView *)rightImageView
 {
     [slideImageView layoutIfNeeded];
-    UIView *background=nil;
-    
-    background=[[UIView alloc] init];
     
     scrollView.frame=CGRectMake(0, 0, slideImageView.width, slideImageView.height);
     scrollView.contentOffset=CGPointMake(slideImageView.width, 0);
@@ -293,6 +291,55 @@
             break;
         default:
             break;
+    }
+}
+
++(void)updateSlideWithArray:(NSArray *)updateArray
+           visionDifference:(CGFloat )visionDifferenceNum
+             slideSuperView:(UIView *)slideImageView
+                 scrollView:(UIScrollView *)scrollView
+                bottomLabel:(UILabel *)bottomLabel
+                 addSubView:(UIView *)view
+                       Left:(UIImageView *)leftImageView
+                     center:(UIImageView *)centerImageView
+                      right:(UIImageView *)rightImageView
+               updateLayout:(SlideUpdataBlock)slideUpdateBlock
+{
+    if (updateArray.count==0) {
+        
+        [leftImageView removeFromSuperview];
+        [centerImageView removeFromSuperview];
+        [rightImageView removeFromSuperview];
+        bottomLabel.text=@"";
+    }
+    else if(updateArray.count==1)
+    {
+        [self layoutArrayCountOneSlideSuperView:slideImageView
+                                     scrollView:scrollView
+                                 backgroundView:view
+                                           left:leftImageView
+                                         center:nil right:nil];
+        [centerImageView removeFromSuperview];
+        [rightImageView removeFromSuperview];
+        
+        if (slideUpdateBlock!=nil) {
+            slideUpdateBlock(0,HP_ENUM_LoadWeb,leftImageView);
+        }
+    }
+    else if(updateArray.count>1)
+    {
+        [self visionDifference:visionDifferenceNum
+                slideSuperView:slideImageView
+                    scrollView:scrollView
+                backgroundView:view
+                          left:leftImageView
+                        center:centerImageView
+                         right:rightImageView];
+        if (slideUpdateBlock!=nil) {
+            slideUpdateBlock(updateArray.count-1,HP_ENUM_LeadyLoadWeb,leftImageView);
+            slideUpdateBlock(0,HP_ENUM_LoadWeb,centerImageView);
+            slideUpdateBlock(1,HP_ENUM_LeadyLoadWeb,rightImageView);
+        }
     }
 }
 

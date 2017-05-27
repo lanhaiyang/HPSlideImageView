@@ -21,6 +21,7 @@
 @property (nonatomic, strong) UIImageView *rightImageView;
 
 @property(nonatomic,strong) UIScrollView *bannerScrollView;
+@property(nonatomic,strong) UIView *bannerBackground;
 
 @property(nonatomic,strong) UIView *bottomView;
 @property(nonatomic,strong) UILabel *contentLabel;
@@ -71,6 +72,7 @@
     [HPSlideLayout visionDifference:_hpObj.visionDifference
                         slideSuperView:slideImageView
                          scrollView:self.bannerScrollView
+              scrollVivewBackground:self.bannerBackground
                           dataArray:hpSetObj.arrayImage
                                left:self.leftImageView
                              center:self.centerImageView
@@ -121,6 +123,7 @@
 -(void)weakObj:(id)weakObj layout:(SET_SlideImage)setBlock
 {
     _hpObj.animation=YES;
+    currentIndex=0;
     if (setBlock!=nil) {
         _hpObj=setBlock(weakObj,self.hpObj);
     }
@@ -129,36 +132,44 @@
         _bottomView.backgroundColor=_hpObj.bottomColor;
         _page.currentPageIndicatorTintColor=_hpObj.pageColor;
         _page.alpha=[HPSlideLogic alphaArray:_hpObj.arrayImage];
+        [self time:_hpObj];
     });
     
+    [HPSlideLayout updateSlideWithArray:_hpObj.arrayImage
+                       visionDifference:_hpObj.visionDifference
+                         slideSuperView:self
+                             scrollView:self.bannerScrollView
+                            bottomLabel:self.contentLabel
+                             addSubView:self.bannerBackground
+                                   Left:self.leftImageView
+                                 center:self.centerImageView
+                                  right:self.rightImageView
+                           updateLayout:^(NSUInteger index, IMAGESTATUS ststus, UIImageView *currentImageView) {
+                               
+                               [HPDownLoadImage imageViewSetImage:currentImageView
+                                                           setObj:[HPSlideLogic arrayData:_hpObj.arrayImage currenInde:index]
+                                                  imageLoadStatus:ststus
+                                             downloadDefaultImage:self.hpObj.defaultImage];
+                               
+                               
+                           }];
+    
+    if (_hpObj.arrayImage.count==0) {
+        return;
+    }
     
     [HPSlideImageView chileWeakObj:self.changeIndexBlock
                       labelContent:self.contentLabel
             changeWithContentBlock:self.changeIndexBlock
                       currenNumber:0];
+
     
-    
-    [HPDownLoadImage imageViewSetImage:self.leftImageView
-                                setObj:[HPSlideLogic arrayData:_hpObj.arrayImage currenInde:_hpObj.arrayImage.count-1]
-                       imageLoadStatus:HP_ENUM_LeadyLoadWeb
-                  downloadDefaultImage:self.hpObj.defaultImage];
-    
-    [HPDownLoadImage imageViewSetImage:self.centerImageView
-                                setObj:[HPSlideLogic arrayData:_hpObj.arrayImage currenInde:0]
-                       imageLoadStatus:HP_ENUM_LoadWeb
-                  downloadDefaultImage:self.hpObj.defaultImage];
-    
-    [HPDownLoadImage imageViewSetImage:self.rightImageView
-                                setObj:[HPSlideLogic arrayData:_hpObj.arrayImage currenInde:1]
-                       imageLoadStatus:HP_ENUM_LeadyLoadWeb
-                  downloadDefaultImage:self.hpObj.defaultImage];
-    
-    [self time:_hpObj];
 }
 
 -(void)time:(HPSetObj *)hpSetObj{
     
     if (hpSetObj.arrayImage.count<=1) {
+        [_time stop];
         return ;
     }
     
@@ -167,7 +178,7 @@
     if (hpSetObj.animation==YES) {
         
         _time=[HPDyamicTime createTime];
-        [_time hpWeakObj:self openAnimationInterval:5 block:^(HPSlideImageView *weakObj) {
+        [_time hpWeakObj:self openAnimationInterval:hpSetObj.animationTime block:^(HPSlideImageView *weakObj) {
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 [UIView animateWithDuration:0.5 animations:^{
@@ -251,16 +262,20 @@
 }
 
 
-+(void)chileWeakObj:(id)weakObj labelContent:(UILabel *)contentLabel changeWithContentBlock:(CHANGE_IndexPath )indexPathBlock currenNumber:(NSUInteger)currenNumber
++(void)chileWeakObj:(id)weakObj
+       labelContent:(UILabel *)contentLabel
+changeWithContentBlock:(CHANGE_IndexPath )indexPathBlock
+       currenNumber:(NSUInteger)currenNumber
 {
+    
     if (indexPathBlock!=nil) {
-        HPContent *content=[HPContent new];
+        __block HPContent *content=[HPContent new];
         indexPathBlock(weakObj,content,currenNumber);
         dispatch_async(dispatch_get_main_queue(), ^{
            contentLabel.text=ObjNil(content.name,@"");
-        });
-        
         content=nil;
+        });
+    
     }
 }
 
@@ -344,6 +359,14 @@
     return _hpObj;
 }
 
+-(UIView *)bannerBackground
+{
+    if (_bannerBackground==nil) {
+        _bannerBackground=[[UIView alloc] init];
+    }
+    return _bannerBackground;
+}
+
 @end
 
 #pragma mark - 设置对象
@@ -395,7 +418,7 @@
     else if(animationTime==0)
     {
         _animation=YES;
-        animationTime=5;
+        _animationTime=5;
         return;
     }
     _animationTime=animationTime;

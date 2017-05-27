@@ -61,8 +61,12 @@
     }
     
     CGFloat movePoint=scrollView.contentOffset.x-scrollerBeignMove;
-    CGFloat percent=movePoint/scrollView.bounds.size.width;
-    CGFloat visionMove=scrollView.width*visionDifferenceNums;
+    CGFloat percent=0;
+    CGFloat visionMove=0;
+    if (scrollView.bounds.size.width!=0) {
+        percent=movePoint/scrollView.bounds.size.width;
+        visionMove=scrollView.width*visionDifferenceNums;
+    }
     CGFloat move=percent * visionMove;
     
     if (scrollView.contentOffset.x>scrollerBeignMove) {
