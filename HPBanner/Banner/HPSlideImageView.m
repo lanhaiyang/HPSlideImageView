@@ -131,6 +131,7 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         _bottomView.backgroundColor=_hpObj.bottomColor;
         _page.currentPageIndicatorTintColor=_hpObj.pageColor;
+        _page.numberOfPages=_hpObj.arrayImage.count;
         _page.alpha=[HPSlideLogic alphaArray:_hpObj.arrayImage];
         [self time:_hpObj];
     });

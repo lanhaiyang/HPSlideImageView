@@ -60,7 +60,7 @@ typedef void(^CHANGE_CURRENT) (id weakObj,HPSlideType slideType,CGFloat visionMo
 
 
 /**
- 办到是否有数据
+ 是否有数据
 
  @param dataArray 数据源
  @return 返回是否有数据
