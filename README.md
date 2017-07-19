@@ -72,16 +72,6 @@ HPSlideImageView *slideImageView=[[HPSlideImageView alloc] initWithFrame:CGRectM
 
 ### 初始化HPSlideImageView
 
-如果用Storyboard 创建在
-
-```objective-c
--(void)layoutSubviews
-{
-    [super layoutSubviews];
-    //在这里初始化HPSlideImageView
-    
- }
-```
 
 ```objective-c
 

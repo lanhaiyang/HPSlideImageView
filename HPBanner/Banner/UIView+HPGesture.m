@@ -60,7 +60,9 @@ static void *hpWeakObj=&hpWeakObj;
         return;
     }
     
-    self.tapClick=[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionTap:)];
+    if (self.tapClick==nil) {
+        self.tapClick=[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionTap:)];
+    }
     self.tapAction=tapClick;
     self.hpWeakObj=weakObj;
     [self addGestureRecognizer:self.tapClick];

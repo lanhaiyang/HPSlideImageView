@@ -14,6 +14,7 @@
 #define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet HPSlideImageView *bannerSlideImageView;
 
 @end
 
@@ -51,7 +52,7 @@
                      
                  }];
     
-    //[slideImageView updateLayout];
+//    [slideImageView updateLayout];
     
 
     

@@ -29,6 +29,7 @@
 
 @property(nonatomic,strong) CHANGE_IndexPath changeIndexBlock;
 @property(nonatomic,strong) SET_SlideImage slideImageBlock;
+@property(nonatomic,strong) ACTIONIMAGEVIEW imageViewActionBlock;
 @property(nonatomic,weak) id chileWeakObj;
 
 @property(nonatomic,strong) HPSetObj *hpObj;
@@ -51,6 +52,12 @@
     NSUInteger currentIndex;
 }
 
+-(void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    [self creatScrollweakObj:_chileWeakObj slideSuperView:self dataArray:_hpObj];
+}
 
 -(void)hp_weakObj:(id)weakObj
     setSlideImage:(SET_SlideImage)setBlock
@@ -60,8 +67,8 @@
     _chileWeakObj=weakObj;
     _changeIndexBlock=indexBlock;
     _slideImageBlock=setBlock;
+    _imageViewActionBlock=actionBlock;
     [self weakObj:weakObj layout:setBlock];
-    [self creatScrollweakObj:weakObj slideSuperView:self dataArray:_hpObj];
     [self weakObj:weakObj mageViewAction:actionBlock];
 }
 
@@ -118,6 +125,7 @@
 -(void)updateLayout
 {
     [self weakObj:_chileWeakObj layout:_slideImageBlock];
+    [self weakObj:_chileWeakObj mageViewAction:_imageViewActionBlock];
 }
 
 -(void)weakObj:(id)weakObj layout:(SET_SlideImage)setBlock
@@ -133,6 +141,7 @@
         _page.currentPageIndicatorTintColor=_hpObj.pageColor;
         _page.numberOfPages=_hpObj.arrayImage.count;
         _page.alpha=[HPSlideLogic alphaArray:_hpObj.arrayImage];
+        _page.userInteractionEnabled=NO;
         [self time:_hpObj];
     });
     
