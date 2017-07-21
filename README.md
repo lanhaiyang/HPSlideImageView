@@ -1,6 +1,20 @@
 # HPSlideImageView
-## 轮播图
-### 下载该项目需要 pod 
+
+### Pods 
+
+```
+#在podfile 中添加
+
+# iOS 版本要7.0 :platform :ios, ‘7.0’
+
+```
+```
+pod 'HPSlideImageView', '~> 0.0.1'
+
+```
+
+### 轮播图
+#### 下载该项目需要 pod 
 
 ```
 打开终端
