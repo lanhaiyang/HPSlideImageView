@@ -11,7 +11,7 @@
 
 static void *tapActionKey = &tapActionKey;
 static void *tapKey = &tapKey;
-static void *hpWeakObj=&hpWeakObj;
+static void *hpWeakObjKey=&hpWeakObjKey;
 
 @interface UIView ()
 
@@ -26,12 +26,12 @@ static void *hpWeakObj=&hpWeakObj;
 
 -(void)setHpWeakObj:(id)hpWeakObj
 {
-     objc_setAssociatedObject(self, &hpWeakObj, hpWeakObj, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+     objc_setAssociatedObject(self, &hpWeakObjKey, hpWeakObj, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 -(id)hpWeakObj
 {
-    return objc_getAssociatedObject(self, &hpWeakObj);
+    return objc_getAssociatedObject(self, &hpWeakObjKey);
 }
 
 -(void)setTapAction:(TAP_ACTION)tapAction
