@@ -137,6 +137,7 @@
     }
     
     dispatch_async(dispatch_get_main_queue(), ^{
+        self.layer.masksToBounds=YES;
         _bottomView.backgroundColor=_hpObj.bottomColor;
         _page.currentPageIndicatorTintColor=_hpObj.pageColor;
         _page.numberOfPages=_hpObj.arrayImage.count;
@@ -186,6 +187,10 @@
     [_time stop];
     
     if (hpSetObj.animation==YES) {
+        
+        if (hpSetObj.animationTime==0) {
+            hpSetObj.animationTime=5;
+        }
         
         _time=[HPDyamicTime createTime];
         [_time hpWeakObj:self openAnimationInterval:hpSetObj.animationTime block:^(HPSlideImageView *weakObj) {
