@@ -40,6 +40,7 @@
                      hpSetObj.style=ENUM_HP_RightContentANDRightPageControl;
                      hpSetObj.arrayImage=arrayDataString;//数据源
                      hpSetObj.visionDifference=0.99;
+                     hpSetObj.contentModel=UIViewContentModeScaleAspectFit;
                      
                      return hpSetObj;
                      

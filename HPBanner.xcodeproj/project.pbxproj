@@ -8,14 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6512185D1EACF10F0013EE85 /* HPSlideLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6512185C1EACF10F0013EE85 /* HPSlideLayout.m */; };
-		652C6BFF1F248C2400DED4BB /* HPSlideUnitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 652C6BFE1F248C2300DED4BB /* HPSlideUnitView.m */; };
-		652C6C021F248C6000DED4BB /* HPSlideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 652C6C011F248C6000DED4BB /* HPSlideView.m */; };
-		6544390A1F371353001C960F /* HPSlideViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 654439091F371353001C960F /* HPSlideViewLayout.m */; };
 		657581B61ED34E52006EA5D7 /* HPDownLoadImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 657581B51ED34E52006EA5D7 /* HPDownLoadImage.m */; };
 		659312091EC83679004E8F04 /* UIView+HPRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 659312081EC83679004E8F04 /* UIView+HPRect.m */; };
 		659312141EC88219004E8F04 /* UIView+HPGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 659312131EC88219004E8F04 /* UIView+HPGesture.m */; };
-		659E00E91F35E43300E15D59 /* HPSlideUnitCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 659E00E81F35E43300E15D59 /* HPSlideUnitCache.m */; };
-		65CDEB4A1ED18104006AEA05 /* HPBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CDEB491ED18104006AEA05 /* HPBottomView.m */; };
 		65F7B2FC1EAB3D2500A99D6C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F7B2FB1EAB3D2500A99D6C /* main.m */; };
 		65F7B2FF1EAB3D2500A99D6C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F7B2FE1EAB3D2500A99D6C /* AppDelegate.m */; };
 		65F7B3021EAB3D2500A99D6C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F7B3011EAB3D2500A99D6C /* ViewController.m */; };
@@ -51,15 +46,8 @@
 		0D18F4044EFFACD7EE4FF8E4 /* Pods-HPBanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HPBanner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HPBanner/Pods-HPBanner.debug.xcconfig"; sourceTree = "<group>"; };
 		6512185B1EACF10F0013EE85 /* HPSlideLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPSlideLayout.h; sourceTree = "<group>"; };
 		6512185C1EACF10F0013EE85 /* HPSlideLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPSlideLayout.m; sourceTree = "<group>"; };
-		652C6BFD1F248C2300DED4BB /* HPSlideUnitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPSlideUnitView.h; sourceTree = "<group>"; };
-		652C6BFE1F248C2300DED4BB /* HPSlideUnitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPSlideUnitView.m; sourceTree = "<group>"; };
-		652C6C001F248C6000DED4BB /* HPSlideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPSlideView.h; sourceTree = "<group>"; };
-		652C6C011F248C6000DED4BB /* HPSlideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPSlideView.m; sourceTree = "<group>"; };
-		654439081F371353001C960F /* HPSlideViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPSlideViewLayout.h; sourceTree = "<group>"; };
-		654439091F371353001C960F /* HPSlideViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPSlideViewLayout.m; sourceTree = "<group>"; };
 		657581B41ED34E52006EA5D7 /* HPDownLoadImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPDownLoadImage.h; sourceTree = "<group>"; };
 		657581B51ED34E52006EA5D7 /* HPDownLoadImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPDownLoadImage.m; sourceTree = "<group>"; };
-		6575E4951F3C04DC00F0EFC6 /* HPSlideViewGetCacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPSlideViewGetCacheDelegate.h; sourceTree = "<group>"; };
 		65929DA31F38104800CB9120 /* HPEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HPEnum.h; sourceTree = "<group>"; };
 		659312071EC83679004E8F04 /* UIView+HPRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HPRect.h"; sourceTree = "<group>"; };
 		659312081EC83679004E8F04 /* UIView+HPRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HPRect.m"; sourceTree = "<group>"; };
@@ -67,10 +55,6 @@
 		6593120B1EC853C3004E8F04 /* HPShowType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPShowType.h; sourceTree = "<group>"; };
 		659312121EC88219004E8F04 /* UIView+HPGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HPGesture.h"; sourceTree = "<group>"; };
 		659312131EC88219004E8F04 /* UIView+HPGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HPGesture.m"; sourceTree = "<group>"; };
-		659E00E71F35E43300E15D59 /* HPSlideUnitCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPSlideUnitCache.h; sourceTree = "<group>"; };
-		659E00E81F35E43300E15D59 /* HPSlideUnitCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPSlideUnitCache.m; sourceTree = "<group>"; };
-		65CDEB481ED18104006AEA05 /* HPBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HPBottomView.h; path = View/HPBottomView.h; sourceTree = "<group>"; };
-		65CDEB491ED18104006AEA05 /* HPBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HPBottomView.m; path = View/HPBottomView.m; sourceTree = "<group>"; };
 		65F7B2F71EAB3D2500A99D6C /* HPBanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HPBanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65F7B2FB1EAB3D2500A99D6C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		65F7B2FD1EAB3D2500A99D6C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -132,11 +116,6 @@
 				6512185C1EACF10F0013EE85 /* HPSlideLayout.m */,
 				657581B41ED34E52006EA5D7 /* HPDownLoadImage.h */,
 				657581B51ED34E52006EA5D7 /* HPDownLoadImage.m */,
-				6575E4951F3C04DC00F0EFC6 /* HPSlideViewGetCacheDelegate.h */,
-				659E00E71F35E43300E15D59 /* HPSlideUnitCache.h */,
-				659E00E81F35E43300E15D59 /* HPSlideUnitCache.m */,
-				654439081F371353001C960F /* HPSlideViewLayout.h */,
-				654439091F371353001C960F /* HPSlideViewLayout.m */,
 			);
 			name = Manage;
 			sourceTree = "<group>";
@@ -229,12 +208,6 @@
 				652C6BFB1F24859400DED4BB /* Manage */,
 				65F7B3301EAB3D4B00A99D6C /* HPSlideImageView.h */,
 				65F7B3311EAB3D4B00A99D6C /* HPSlideImageView.m */,
-				652C6C001F248C6000DED4BB /* HPSlideView.h */,
-				652C6C011F248C6000DED4BB /* HPSlideView.m */,
-				652C6BFD1F248C2300DED4BB /* HPSlideUnitView.h */,
-				652C6BFE1F248C2300DED4BB /* HPSlideUnitView.m */,
-				65CDEB481ED18104006AEA05 /* HPBottomView.h */,
-				65CDEB491ED18104006AEA05 /* HPBottomView.m */,
 			);
 			path = Banner;
 			sourceTree = "<group>";
@@ -449,13 +422,8 @@
 				65F7B3341EAB3D4B00A99D6C /* HPDyamicTime.m in Sources */,
 				65F7B2FF1EAB3D2500A99D6C /* AppDelegate.m in Sources */,
 				659312091EC83679004E8F04 /* UIView+HPRect.m in Sources */,
-				659E00E91F35E43300E15D59 /* HPSlideUnitCache.m in Sources */,
-				6544390A1F371353001C960F /* HPSlideViewLayout.m in Sources */,
-				652C6BFF1F248C2400DED4BB /* HPSlideUnitView.m in Sources */,
 				659312141EC88219004E8F04 /* UIView+HPGesture.m in Sources */,
 				65F7B2FC1EAB3D2500A99D6C /* main.m in Sources */,
-				652C6C021F248C6000DED4BB /* HPSlideView.m in Sources */,
-				65CDEB4A1ED18104006AEA05 /* HPBottomView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
