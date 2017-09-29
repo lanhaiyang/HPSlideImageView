@@ -143,6 +143,11 @@
         _page.numberOfPages=_hpObj.arrayImage.count;
         _page.alpha=[HPSlideLogic alphaArray:_hpObj.arrayImage];
         _page.userInteractionEnabled=NO;
+        
+        _leftImageView.contentMode=_hpObj.contentModel;
+        _centerImageView.contentMode=_hpObj.contentModel;
+        _rightImageView.contentMode=_hpObj.contentModel;
+        
         [self time:_hpObj];
     });
     

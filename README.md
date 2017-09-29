@@ -38,6 +38,7 @@ HPSlideImageView *slideImageView=[[HPSlideImageView alloc] initWithFrame:CGRectM
 - hpSetObj.style        设置样式
 - hpSetObj.arrayImage   数据源 UIImage 或  NSString
 - hpSetObj.bottomColor  底部bottom view 颜色
+- hpSetObj.contentModel 图片显示填充方式
 - hpSetObj.pageColor    修改 select 的颜色
 - hpSetObj.defaultImage 设置下载时的默认图片
 

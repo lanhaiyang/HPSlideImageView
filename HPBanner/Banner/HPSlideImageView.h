@@ -57,6 +57,12 @@ typedef void (^ACTIONIMAGEVIEW)(id weakObj,NSUInteger index);
  */
 @property(nonatomic,assign) NSTimeInterval animationTime;
 
+
+/**
+ 图片显示填充方式
+ */
+@property(nonatomic,assign) UIViewContentMode contentModel;
+
 /**
  样式
  */
